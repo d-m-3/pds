@@ -1,5 +1,5 @@
 # pds-cubic
-Proportionally dense subgraphs (PDS) in cubic graphs
+## Proportionally dense subgraphs (PDS) in cubic graphs
 
 ## Install
 ```bash
