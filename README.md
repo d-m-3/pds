@@ -1,6 +1,6 @@
 # pds-cubic
 ## Proportionally dense subgraphs (PDS) in cubic graphs - Overview
-`pds_cubic` is a framework written in Python for generating and drawing random cubic graphs, showing a PDS of the maximum size, and searching for graphs that do not have a PDS of the maximum size. Specific search of cubic graphs that do not have a Hamiltonian cycle can be done. Also, cubic graphs that do not have a Hamiltonian cycle can be generated.
+`pds_cubic` is a framework written in Python for generating and drawing random cubic graphs, showing a proportionally dense subgraph (PDS) of the maximum size, and searching for graphs that do not have a PDS of the maximum size. *"A proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579). Specific search of cubic graphs that do not have a Hamiltonian cycle can be done. Also, cubic graphs that do not have a Hamiltonian cycle can be generated.
 
 
 ## Install

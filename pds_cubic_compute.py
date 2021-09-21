@@ -16,7 +16,10 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
           " \nfor graphs that have not a PDS of maximum size. Please wait...")
     progress = 0
     for i in range(1, graphs_nb + 1):
+        # Looks only for connected cubic graphs.
         G = nx.random_regular_graph(3, vertices_nb, seed=None)
+        while not nx.is_connected(G):
+            G = nx.random_regular_graph(3, vertices_nb, seed=None)
         # If only_nh == True, checks only for cubic graphs that do not have
         # an Hamiltonian cycle.
         if only_nh:
@@ -35,10 +38,10 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
             print(f"{progress}% done")
 
 def main():
-    vertices_nb = 22
-    graphs_nb = 100
+    vertices_nb = 16
+    graphs_nb = 1000
     file = pds.next_valid_filepath("EXCEPTION-%s")
-    create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=True)
+    create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=False)
 
 if __name__ == '__main__':
     main()
