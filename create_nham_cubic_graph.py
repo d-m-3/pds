@@ -25,7 +25,7 @@ def create_nham_cubic_graph(vertices_nb, filepath):
               "Please retry.")
 
 def main():
-    vertices_nb = 10
+    vertices_nb = 24
     file = pds.next_valid_filepath(f"nham-cubic-graphs/{vertices_nb}-nh-%s")
     create_nham_cubic_graph(vertices_nb, file)
 
