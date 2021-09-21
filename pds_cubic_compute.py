@@ -38,8 +38,8 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
             print(f"{progress}% done")
 
 def main():
-    vertices_nb = 16
-    graphs_nb = 1000
+    vertices_nb = 24
+    graphs_nb = 500
     file = pds.next_valid_filepath("EXCEPTION-%s")
     create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=False)
 
