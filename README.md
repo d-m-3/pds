@@ -1,11 +1,20 @@
 # pds-cubic
 ## Proportionally dense subgraphs (PDS) in cubic graphs
 
+
 ## Install
+### Command line (bash)
 ```bash
 git clone https://github.com/d-m-3/pds-cubic.git
 pip install -r requirements.txt
 ```
+
+## Usage
+- `pds_cubic_compute.py` is used to create random cubic graphs and check for graphs that have not a PDS of maximum size. We can also specifically search for cubic graphs that do not have an Hamiltonian cycle. If an exception is found, it is drawn, and saved as a `.png` figure and as an edge list.
+- `pds_cubic_draw.py` is used to draw cubic graphs up to 28 vertices.
+- `create_nham_cubic_graph.py` is used to create one (ore more) cubic graph(s) that do not have an Hamiltonian cylce.
+- `pds_cubic_tests.py` contains unit tests. Note that the tests are not exhaustive.
+- `gex.py` contains three graph exceptions of 8 vertices.
 
 ## External usage
 You can import the library in your own modules.
