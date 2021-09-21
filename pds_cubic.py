@@ -20,7 +20,8 @@ def find_max_pds(G, vertices_nb):
 
 def pds_size(vertices_nb):
     """
-    Returns the max. possible size of a PDS, according to the number of vertices.
+    Returns the max. possible size of a PDS, according to the number of 
+    vertices, in cubic graphs.
     """
     return math.floor((2 * vertices_nb + 1)/ 3)
 
