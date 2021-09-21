@@ -1,7 +1,6 @@
 import unittest
 import networkx as nx
 import pds_cubic as pds
-#from tools import lecture_graph
 
 
 class TestMaxPdsCubicGraphs(unittest.TestCase):
