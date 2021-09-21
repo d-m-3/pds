@@ -53,7 +53,8 @@ def deg_subgraph(vertex, G, subgraph):
 def is_pds_max(G, max_pds, vertices_nb):
     """
     Returns True if the given PDS is of maximum size, i.e., 
-    floor((2 * |V|))/3). Otherwise, returns False.
+    floor((2 * |V|))/3). Otherwise, returns False. For cubic graphs of
+    eight vertices, three graph exceptions are not considered.
     """
     if len(max_pds) == pds_size(vertices_nb):
         return True
@@ -61,7 +62,7 @@ def is_pds_max(G, max_pds, vertices_nb):
         if vertices_nb != 8:
             return False
         else:
-            # Check for isomophism with the three exceptions graphs, if |V|=8.
+            # Check for isomophism with the three graph exceptions, if |V|=8.
             if not nx.is_isomorphic(G, gex.Gex1()) and not nx.is_isomorphic(G, 
             gex.Gex2()) and not nx.is_isomorphic(G, gex.G_two_K4()):
                 return False
@@ -121,7 +122,9 @@ def save_graph_and_figure(G, figure, filepath):
     
 def next_valid_filepath(pattern):
     """
-    Gives the next valid filename, according to the pattern.
+    Gives the next valid filename, according to the pattern. E.g., if the 
+    pattern is "sample-" and the file "sample-1.png" exists, it returns
+    "sample-2".
     """
     i = 1
     while os.path.exists((pattern % i) + ".png"):

@@ -13,7 +13,7 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
     cycle are considered (note that it takes much longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and checking"
-          " \nfor graphs that have not a PDS of max. size. Please wait...")
+          " \nfor graphs that have not a PDS of maximum size. Please wait...")
     progress = 0
     for i in range(1, graphs_nb + 1):
         G = nx.random_regular_graph(3, vertices_nb, seed=None)
