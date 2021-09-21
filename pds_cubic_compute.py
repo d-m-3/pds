@@ -5,11 +5,11 @@ import pds_cubic as pds
 def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
     """
     Creates random cubic graphs of "vertices_nb" of vertices 
-    and checks for graphs that have not a PDS of maximum size.
+    and checks for graphs with no PDS of maximum size.
     If such a graph is found, it saves the graph (as an edge list, 
     that can be imported), and saves the figure of the graph, in the given 
     filepath (path/to/file). The file extensions are added automatically.
-    If "only_nh" is True, only cubic graphs that do not have an Hamiltonian 
+    If "only_nh" is True, only cubic graphs that do not have a Hamiltonian 
     cycle are considered (note that it takes much longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and checking"

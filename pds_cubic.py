@@ -71,7 +71,7 @@ def is_pds_max(G, max_pds, vertices_nb):
 
 def hamiltonian_cycle(G):
     """
-    Returns an Hamiltonian cycle if it exists.
+    Returns a Hamiltonian cycle if it exists.
     Adatped from https://gist.github.com/mikkelam/ab7966e7ab1c441f947b
     """
     F = [(G, [list(G.nodes())[0]])]
