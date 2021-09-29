@@ -17,7 +17,7 @@ def create_nham_cubic_graph(vertices_nb, filepath):
         while not nx.is_connected(G):
             G = nx.random_regular_graph(3, vertices_nb, seed=None)
         if pds.hamiltonian_cycle(G) == None:
-            max_pds = pds.find_max_pds(G, vertices_nb)
+            max_pds = pds.find_one_max_pds(G)
             figure = pds.draw_graph(G, max_pds)
             pds.save_graph_and_figure(G, figure, filepath)
             success = True
@@ -28,7 +28,7 @@ def create_nham_cubic_graph(vertices_nb, filepath):
               "Please retry.")
 
 def main():
-    vertices_nb = 18
+    vertices_nb = 16
     file = pds.next_valid_filepath(f"non-ham-cubic-graphs/{vertices_nb}-nh-%s")
     create_nham_cubic_graph(vertices_nb, file)
 

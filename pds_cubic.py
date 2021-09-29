@@ -6,17 +6,32 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 
 
-def find_max_pds(G, vertices_nb):
+def find_one_max_pds(G):
     """
-    Returns a list containing a PDS of maximum size.
+    Returns a list containing one PDS of maximum size. The PDS may not
+    be connected.
     """
     # List of all possible combinations of subsets of vertices of max. PDS size
-    combs = list(combinations(range(vertices_nb), pds_size(vertices_nb)))
+    combs = list(combinations(range(G.number_of_nodes()), 
+                              pds_size(G.number_of_nodes())))
     # For each possible combination, check if it is a PDS. If yes, returns.
     for subset in combs:
         if is_subgraph_a_pds(G, list(subset)):
             return list(subset)
     return []
+
+def get_all_max_pds(G):
+    """
+    Returns a list containing all lists of PDS of maximum size. The PDSs
+    may not be connected.
+    """
+    combs = list(combinations(range(G.number_of_nodes()), 
+                              pds_size(G.number_of_nodes())))
+    all_pds = []
+    for subset in combs:
+        if is_subgraph_a_pds(G, list(subset)):
+            all_pds.append(list(subset))
+    return all_pds
 
 def pds_size(vertices_nb):
     """
@@ -68,6 +83,19 @@ def is_pds_max(G, max_pds, vertices_nb):
                 return False
             else:
                 return True
+            
+def get_nodes_not_part_of_pds(G):
+    """
+    Returns a list of vertices that are not part of at least one PDS of 
+    maximum size.
+    """
+    all_pds = get_all_max_pds(G)
+    nodes_not_part_of_pds = []
+    for vertex in G.nodes():
+        # If a vertex is not found in any PDS of maximum size, return false.
+        if not (vertex in (item for sublist in all_pds for item in sublist)):
+            nodes_not_part_of_pds.append(vertex)
+    return nodes_not_part_of_pds
 
 def hamiltonian_cycle(G):
     """
