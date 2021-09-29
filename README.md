@@ -12,9 +12,11 @@ pip install -r requirements.txt
 ## Usage
 - `pds_cubic_compute.py` is used to create random cubic graphs and check for graphs with no PDS of maximum size. You can also specifically search for cubic graphs that do not have a Hamiltonian cycle. If an exception is found, it is drawn, and saved as a `.png` figure and as an edge list.
 - `pds_cubic_draw.py` is used to draw cubic graphs up to 28 vertices.
+- `pds_cubic_every_vertex.py` is used to check if every vertex is part of a PDS of maximum size.
 - `create_nham_cubic_graph.py` is used to create one (ore more) cubic graph(s) with no Hamiltonian cycle.
 - `pds_cubic_tests.py` contains unit tests. Note that the tests are not exhaustive.
 - `gex.py` contains three graph exceptions of 8 vertices, that do not have a PDS of maximum size.
+- `pds_cubic.py` is the main library that can be imported as a module (see below).
 
 ## External usage
 You can import the library `pds_cubic` in your own modules:
