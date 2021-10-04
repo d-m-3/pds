@@ -36,8 +36,8 @@ def check_every_vertex(vertices_nb, graphs_nb, only_nh=False):
             print(f"{progress}% done")
 
 def main():
-    vertices_nb = 18
-    graphs_nb = 20
+    vertices_nb = 22
+    graphs_nb = 100
     check_every_vertex(vertices_nb, graphs_nb, only_nh=True)
 
 if __name__ == '__main__':
