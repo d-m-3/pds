@@ -5,7 +5,7 @@ import pds_cubic as pds
 def main():
     vertices_nb = 12
     # Creates a random cubic graph with the number of vertices given above,
-    # and draws the graph, with the vertices of a PDS of maximum size in red.
+    # and draws the graph, with the vertices of a PDS of the maximum size in red.
     # Only connected graphs are considered.
     G = nx.random_regular_graph(3, vertices_nb, seed=None)
     while not nx.is_connected(G):

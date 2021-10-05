@@ -8,7 +8,7 @@ from itertools import combinations
 
 def find_one_max_pds(G):
     """
-    Returns a list containing one PDS of maximum size. The PDS may not
+    Returns a list containing one PDS of the maximum size. The PDS may not
     be connected.
     """
     # List of all possible combinations of subsets of vertices of max. PDS size
@@ -22,7 +22,7 @@ def find_one_max_pds(G):
 
 def get_all_max_pds(G):
     """
-    Returns a list containing all lists of PDS of maximum size. The PDSs
+    Returns a list containing all lists of PDS of the maximum size. The PDSs
     may not be connected.
     """
     combs = list(combinations(range(G.number_of_nodes()), 
@@ -67,7 +67,7 @@ def deg_subgraph(vertex, G, subgraph):
 
 def is_pds_max(G, max_pds, vertices_nb):
     """
-    Returns True if the given PDS is of maximum size, i.e., 
+    Returns True if the given PDS is of the maximum size, i.e., 
     floor((2 * |V|))/3). Otherwise, returns False. For cubic graphs of
     eight vertices, three graph exceptions are not considered.
     """
@@ -92,7 +92,7 @@ def get_nodes_not_part_of_pds(G):
     all_pds = get_all_max_pds(G)
     nodes_not_part_of_pds = []
     for vertex in G.nodes():
-        # If a vertex is not found in any PDS of maximum size, return false.
+        # If a vertex is not found in any PDS of the maximum size, return false.
         if not (vertex in (item for sublist in all_pds for item in sublist)):
             nodes_not_part_of_pds.append(vertex)
     return nodes_not_part_of_pds
