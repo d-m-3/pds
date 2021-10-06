@@ -1,5 +1,6 @@
 import networkx as nx
 import pds_cubic as pds
+import test14
 
 
 def check_every_vertex(vertices_nb, graphs_nb, only_nh=False):
@@ -36,9 +37,9 @@ def check_every_vertex(vertices_nb, graphs_nb, only_nh=False):
             print(f"{progress}% done")
 
 def main():
-    vertices_nb = 14
-    graphs_nb = 100
-    check_every_vertex(vertices_nb, graphs_nb, only_nh=True)
+    vertices_nb = 12
+    graphs_nb = 10
+    check_every_vertex(vertices_nb, graphs_nb, only_nh=False) 
 
 if __name__ == '__main__':
     main()

@@ -28,8 +28,8 @@ def create_nham_cubic_graph(vertices_nb, filepath):
               "Please retry.")
 
 def main():
-    vertices_nb = 16
-    file = pds.next_valid_filepath(f"non-ham-cubic-graphs/{vertices_nb}-nh-%s")
+    vertices_nb = 18
+    file = pds.next_valid_filepath(f"non_ham_cubic_graphs/{vertices_nb}-nh-%s")
     create_nham_cubic_graph(vertices_nb, file)
 
 if __name__ == '__main__':

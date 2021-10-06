@@ -13,17 +13,15 @@ def main():
         G = nx.random_regular_graph(3, vertices_nb, seed=None)
     all_max_pds = pds.get_all_max_pds(G)
     # Draw "pds_nb" different PDSs of the maximum size, of the same graph.
-    for i in range(pds_nb):
-        pds.draw_graph(G, all_max_pds[i])
+    '''for i in range(pds_nb):
+        pds.draw_graph(G, all_max_pds[i])'''
     
     # Save all PDSs of the maximum size of a graph in .png files.
-    '''
     for index, a_pds in enumerate(all_max_pds):
         filepath = f"all_pds_of_a_graph/{vertices_nb}-{index}"
+        print(a_pds)
         figure = pds.draw_graph(G, a_pds)
         pds.save_graph_and_figure(G, figure, filepath)
-    '''
-    
 
 if __name__ == '__main__':
     main()
