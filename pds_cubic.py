@@ -18,7 +18,7 @@ def find_one_max_pds(G):
     for subset in combs:
         if is_subgraph_a_pds(G, list(subset)):
             return list(subset)
-    return []
+    return [] # Returns an empty list if no PDS of the max. size could be found.
 
 def get_all_max_pds(G):
     """
@@ -97,6 +97,23 @@ def get_nodes_not_part_of_pds(G):
             nodes_not_part_of_pds.append(vertex)
     return nodes_not_part_of_pds
 
+def get_pds_every_v_ds2(G):
+    """
+    Returns a list containing one PDS of the maximum size, where for every
+    vertex v, d_s(v) = 2. The PDS may not be connected.
+    """
+    all_max_pds = get_all_max_pds(G)
+    for a_pds in all_max_pds:
+        every_v_ds2 = True
+        for vertex in a_pds:
+            if deg_subgraph(vertex, G, a_pds) != 2:
+                every_v_ds2 = False
+                break
+        if every_v_ds2:
+            return a_pds
+    return [] # Returns an empty list if no such PDS could be found.
+        
+
 def hamiltonian_cycle(G):
     """
     Returns a Hamiltonian cycle if it exists.
@@ -138,6 +155,14 @@ def draw_graph(G, max_pds):
     figure = plt.gcf()
     plt.show()
     return figure
+
+def draw_all_max_pds(G):
+    """
+    Draws all the PDSs of the maximum size, for the given graph G.
+    """
+    all_max_pds = get_all_max_pds(G)
+    for a_pds in all_max_pds:
+        draw_graph(G, a_pds)
 
 def save_graph_and_figure(G, figure, filepath):
     """

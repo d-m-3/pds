@@ -58,3 +58,19 @@ def G_two_K4():
     G_two_K4.add_edge(6,8)
     G_two_K4.add_edge(7,8)
     return G_two_K4
+
+def G_test_6():
+    """
+    Returns a graph of 6 vertices, used for unit tests.
+    """
+    G = nx.Graph()
+    G.add_edge(0, 1)
+    G.add_edge(1, 2)
+    G.add_edge(2, 3)
+    G.add_edge(3, 4)
+    G.add_edge(3, 5)
+    G.add_edge(4, 5)
+    G.add_edge(5, 0)
+    G.add_edge(2, 0)
+    G.add_edge(4, 1)
+    return G
