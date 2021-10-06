@@ -118,7 +118,6 @@ def get_pds_every_v_ds2(G):
             return a_pds
     return [] # Returns an empty list if no such PDS could be found.
         
-
 def hamiltonian_cycle(G):
     """
     Returns a Hamiltonian cycle if it exists.
