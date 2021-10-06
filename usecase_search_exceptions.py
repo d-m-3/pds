@@ -1,4 +1,3 @@
-import networkx as nx
 import pds_cubic as pds
 
     
@@ -16,17 +15,7 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
           " \nfor graphs that have not a PDS of the maximum size. Please wait...")
     progress = 0
     for i in range(1, graphs_nb + 1):
-        # If only_nh == True, checks only for connected cubic graphs that do 
-        # not have an Hamiltonian cycle.
-        if only_nh:
-            G = nx.random_regular_graph(3, vertices_nb, seed=None)
-            while not (pds.hamiltonian_cycle(G) == None and nx.is_connected(G)):
-                G = nx.random_regular_graph(3, vertices_nb, seed=None)
-        else:
-            # Looks only for connected cubic graphs.
-            G = nx.random_regular_graph(3, vertices_nb, seed=None)
-            while not nx.is_connected(G):
-                G = nx.random_regular_graph(3, vertices_nb, seed=None)
+        G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         # Try to find a PDS of the maximum size.
         max_pds = pds.find_one_max_pds(G)
         # If there is no PDS of max. size, saves graph and figure, and abort.
@@ -40,7 +29,7 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
             print(f"{progress}% done")
 
 def main():
-    vertices_nb = 10
+    vertices_nb = 14
     graphs_nb = 50
     file = pds.next_valid_filepath("EXCEPTION-%s")
     create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=True)

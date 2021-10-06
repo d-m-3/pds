@@ -1,4 +1,3 @@
-import networkx as nx
 import pds_cubic as pds
 
 def check_every_v_ds2(vertices_nb, graphs_nb, only_nh=False):
@@ -16,17 +15,7 @@ def check_every_v_ds2(vertices_nb, graphs_nb, only_nh=False):
           " \nPlease wait...")
     progress = 0
     for i in range(1, graphs_nb + 1):
-        # If only_nh == True, checks only for connected cubic graphs that do 
-        # not have an Hamiltonian cycle.
-        if only_nh:
-            G = nx.random_regular_graph(3, vertices_nb, seed=None)
-            while not (pds.hamiltonian_cycle(G) == None and nx.is_connected(G)):
-                G = nx.random_regular_graph(3, vertices_nb, seed=None)
-        else:
-            # Looks for all connected cubic graphs.
-            G = nx.random_regular_graph(3, vertices_nb, seed=None)
-            while not nx.is_connected(G):
-                G = nx.random_regular_graph(3, vertices_nb, seed=None)
+        G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         pds_v_ds2 = pds.get_pds_every_v_ds2(G)
         # If there is no PDS, where, for every vertex v, d_s(v) = 2
         if len(pds_v_ds2) == 0:

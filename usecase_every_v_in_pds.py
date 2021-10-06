@@ -1,4 +1,3 @@
-import networkx as nx
 import pds_cubic as pds
 
 
@@ -15,17 +14,7 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False):
           " PDS of the maximum size. \nPlease wait...")
     progress = 0
     for i in range(1, graphs_nb + 1):
-        # If only_nh == True, checks only for connected cubic graphs that do 
-        # not have an Hamiltonian cycle.
-        if only_nh:
-            G = nx.random_regular_graph(3, vertices_nb, seed=None)
-            while not (pds.hamiltonian_cycle(G) == None and nx.is_connected(G)):
-                G = nx.random_regular_graph(3, vertices_nb, seed=None)
-        else:
-            # Looks for all connected cubic graphs.
-            G = nx.random_regular_graph(3, vertices_nb, seed=None)
-            while not nx.is_connected(G):
-                G = nx.random_regular_graph(3, vertices_nb, seed=None)
+        G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         nodes_not_in_pds = pds.get_nodes_not_part_of_pds(G)
         if len(nodes_not_in_pds) != 0:
             pds.draw_graph(G, [])

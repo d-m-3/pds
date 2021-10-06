@@ -2,6 +2,7 @@ import os
 import math
 import networkx as nx
 import gex
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 from itertools import combinations
 
@@ -142,6 +143,21 @@ def hamiltonian_cycle(G):
             else:
                 F.append((g, p))
     return None
+
+def get_connected_cubic_graph(vertices_nb, only_nh):
+    """
+    Returns a random connected cubic graph, with |V| = vertices_nb, 
+    and that is non-Hamiltonian if "only_nh" is True.
+    """
+    if only_nh:
+        G = nx.random_regular_graph(3, vertices_nb, seed=None)
+        while not (hamiltonian_cycle(G) == None and nx.is_connected(G)):
+            G = nx.random_regular_graph(3, vertices_nb, seed=None)
+    else:
+        G = nx.random_regular_graph(3, vertices_nb, seed=None)
+        while not nx.is_connected(G):
+            G = nx.random_regular_graph(3, vertices_nb, seed=None)
+    return G
 
 def draw_graph(G, max_pds):
     """
