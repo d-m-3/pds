@@ -16,12 +16,12 @@ def main():
     '''for i in range(pds_nb):
         pds.draw_graph(G, all_max_pds[i])'''
     
-    # Save all PDSs of the maximum size of a graph in .png files.
+    # Draw (and save) all PDSs of the maximum size of a graph in .png files.
     for index, a_pds in enumerate(all_max_pds):
         filepath = f"all_pds_of_a_graph/{vertices_nb}-{index}"
         print(a_pds)
         figure = pds.draw_graph(G, a_pds)
-        pds.save_graph_and_figure(G, figure, filepath)
+        #pds.save_graph_and_figure(G, figure, filepath)
 
 if __name__ == '__main__':
     main()

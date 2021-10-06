@@ -11,8 +11,7 @@ def main():
     while not (pds.hamiltonian_cycle(G) == None and nx.is_connected(G)):
         G = nx.random_regular_graph(3, vertices_nb, seed=None)
     max_pds = pds.find_one_max_pds(G)
-    # pds.draw_graph(G, max_pds)
-    pds.draw_graph(G, [])
+    pds.draw_graph(G, max_pds)
 
 if __name__ == '__main__':
     main()

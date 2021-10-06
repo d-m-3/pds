@@ -1,6 +1,5 @@
 import networkx as nx
 import pds_cubic as pds
-import test14
 
 
 def check_every_vertex(vertices_nb, graphs_nb, only_nh=False):
