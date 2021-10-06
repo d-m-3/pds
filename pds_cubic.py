@@ -11,9 +11,7 @@ def find_one_max_pds(G):
     Returns a list containing one PDS of the maximum size. The PDS may not
     be connected.
     """
-    # List of all possible combinations of subsets of vertices of max. PDS size
-    combs = list(combinations(range(G.number_of_nodes()), 
-                              pds_size(G.number_of_nodes())))
+    combs = get_combinations_of_subsets(G)
     # For each possible combination, check if it is a PDS. If yes, returns.
     for subset in combs:
         if is_subgraph_a_pds(G, list(subset)):
@@ -22,20 +20,27 @@ def find_one_max_pds(G):
 
 def get_all_max_pds(G):
     """
-    Returns a list containing all lists of PDS of the maximum size. The PDSs
+    Returns a list containing all lists of PDSs of the maximum size. The PDSs
     may not be connected.
     """
-    combs = list(combinations(range(G.number_of_nodes()), 
-                              pds_size(G.number_of_nodes())))
+    combs = get_combinations_of_subsets(G)
     all_pds = []
     for subset in combs:
         if is_subgraph_a_pds(G, list(subset)):
             all_pds.append(list(subset))
     return all_pds
 
+def get_combinations_of_subsets(G):
+    """
+    Returns a list of all possible combinations of subsets (as lists) 
+    of vertices of PDSs of the maximum size.
+    """
+    return list(combinations(range(G.number_of_nodes()), 
+                             pds_size(G.number_of_nodes())))
+
 def pds_size(vertices_nb):
     """
-    Returns the max. possible size of a PDS, according to the number of 
+    Returns the maximum possible size of a PDS, according to the number of 
     vertices, in cubic graphs.
     """
     return math.floor((2 * vertices_nb + 1)/ 3)

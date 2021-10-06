@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 ## Usage
 - `pds_cubic.py` is the main library that can be imported as a module (see below).
-- `pds_cubic_tests.py` contains unit tests. Note that the tests are not exhaustive.
+- `pds_cubic_tests.py` contains the unit tests for all the functions in `pds_cubic.py`, except for the functions that draw and/or save graphs.
 - `usecase_search_exceptions.py` is used to create random cubic graphs and check for graphs with no PDS of the maximum size. You can also specifically search for cubic graphs that do not have a Hamiltonian cycle. If an exception is found, it is drawn, and saved as a `.png` figure and as an edge list.
 - `usecase_draw_1_pds.py` is used to draw cubic graphs up to 28 vertices.
 - `usecase_draw_all_pds.py` is used to draw different (or all) PDSs of the same non-Hamiltonian cubic graph.
