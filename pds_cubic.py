@@ -2,7 +2,6 @@ import os
 import math
 import networkx as nx
 import gex
-import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 from itertools import combinations
 

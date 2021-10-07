@@ -31,7 +31,7 @@ def check_every_v_ds2(vertices_nb, graphs_nb, only_nh=False):
 
 def main():
     # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 10
+    vertices_nb = 14
     graphs_nb = 20
     check_every_v_ds2(vertices_nb, graphs_nb, only_nh=True)
 
