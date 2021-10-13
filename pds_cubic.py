@@ -128,16 +128,16 @@ def get_pds_every_v_ds2_and_u_w_ds3(G):
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
-        every_v_ds2_one_u_ds3 = True
+        every_v_ds2_two_ds3 = True
         ds3 = 0
         for vertex in a_pds:
             if deg_subgraph(vertex, G, a_pds) != 2:
                 if ds3 > 2:
-                    every_v_ds2_one_u_ds3 = False
+                    every_v_ds2_two_ds3 = False
                     break
                 else:
                     ds3 += 1
-        if every_v_ds2_one_u_ds3 and ds3 <= 2:
+        if every_v_ds2_two_ds3 and ds3 <= 2:
             return a_pds
     return [] # Returns an empty list if no such PDS could be found.
         
