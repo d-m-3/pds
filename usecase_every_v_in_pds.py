@@ -23,9 +23,9 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
 
 def main():
     # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 20
+    vertices_nb = 22
     graphs_nb = 100
-    check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=True) 
+    check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False) 
 
 if __name__ == '__main__':
     main()

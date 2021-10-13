@@ -92,13 +92,14 @@ def is_pds_max(G, max_pds, vertices_nb):
             
 def get_nodes_not_part_of_pds(G):
     """
-    Returns a list of vertices that are not part of at least one PDS of 
+    Returns a list of vertices that are not part of at least one PDS of the
     maximum size.
     """
     all_pds = get_all_max_pds(G)
     nodes_not_part_of_pds = []
     for vertex in G.nodes():
-        # If a vertex is not found in any PDS of the maximum size, return false.
+        # If a vertex is not found in any PDS of the maximum size,
+        # append it to the list to be returned
         if not (vertex in (item for sublist in all_pds for item in sublist)):
             nodes_not_part_of_pds.append(vertex)
     return nodes_not_part_of_pds
