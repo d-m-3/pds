@@ -1,7 +1,7 @@
 import pds_cubic as pds
 
     
-def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh=False):
+def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
     """
     Creates random cubic graphs of "vertices_nb" of vertices 
     and checks for graphs with no PDS of the maximum size.

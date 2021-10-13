@@ -18,7 +18,7 @@ pip install -r requirements.txt
 - `usecase_every_v_in_pds.py` is used to check if every vertex is part of a PDS of the maximum size.
 - `usecase_every_v_ds2.py` is used to check if, for every graph, there exists a PDS of the maximum size and for every vertex v, d_s(v) = 2.
 - `usecase_create_nham_graph.py` is used to create one (ore more) cubic graph(s) with no Hamiltonian cycle.
-- `gex.py` contains three graph exceptions of 8 vertices, that do not have a PDS of the maximum size.
+- `gex.py` contains specific graphs, notably, exceptions of 8 vertices, that do not have a PDS of the maximum size, and graphs used for unit tests.
 
 ## External usage
 You can import the library `pds_cubic` in your own modules:

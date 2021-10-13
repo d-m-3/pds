@@ -1,7 +1,7 @@
 import pds_cubic as pds
 
 
-def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False):
+def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
     Creates random cubic graphs of "vertices_nb" of vertices 
     and checks if every vertex of the graph is part of at least one PDS

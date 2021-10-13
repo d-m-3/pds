@@ -1,6 +1,6 @@
 import pds_cubic as pds
 
-def check_every_v_ds2(vertices_nb, graphs_nb, only_nh=False):
+def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
     """
     Creates random cubic graphs of "vertices_nb" of vertices 
     and checks if, for every graph, there exists a PDS of the maximum size and 
@@ -34,6 +34,6 @@ def main():
     vertices_nb = 14
     graphs_nb = 20
     check_every_v_ds2(vertices_nb, graphs_nb, only_nh=True)
-
+    
 if __name__ == '__main__':
     main()
