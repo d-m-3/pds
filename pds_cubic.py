@@ -99,7 +99,7 @@ def get_nodes_not_part_of_pds(G):
     nodes_not_part_of_pds = []
     for vertex in G.nodes():
         # If a vertex is not found in any PDS of the maximum size,
-        # append it to the list to be returned
+        # append it to the list to be returned.
         if not (vertex in (item for sublist in all_pds for item in sublist)):
             nodes_not_part_of_pds.append(vertex)
     return nodes_not_part_of_pds
