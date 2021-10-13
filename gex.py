@@ -74,3 +74,47 @@ def G_test_6():
     G.add_edge(2, 0)
     G.add_edge(4, 1)
     return G
+
+def G_test_10():
+    """
+    Returns a graph of 10 vertices, used for unit tests.
+    """
+    G = nx.Graph()
+    G.add_edge(0, 4)
+    G.add_edge(0, 8)
+    G.add_edge(0, 9)
+    G.add_edge(1, 3)
+    G.add_edge(1, 5)
+    G.add_edge(1, 7)
+    G.add_edge(2, 4)
+    G.add_edge(2, 6)
+    G.add_edge(2, 9)
+    G.add_edge(3, 5)
+    G.add_edge(3, 7)
+    G.add_edge(4, 8)
+    G.add_edge(5, 6)
+    G.add_edge(6, 7)
+    G.add_edge(8, 9)
+    return G
+
+def G_test_10_2ds3():
+    """
+    Returns a graph of 10 vertices, used for unit tests.
+    """
+    G = nx.Graph()
+    G.add_edge(0, 1)
+    G.add_edge(0, 6)
+    G.add_edge(0, 7)
+    G.add_edge(1, 3)
+    G.add_edge(1, 9)
+    G.add_edge(2, 5)
+    G.add_edge(2, 7)
+    G.add_edge(2, 9)
+    G.add_edge(3, 5)
+    G.add_edge(3, 8)
+    G.add_edge(4, 6)
+    G.add_edge(4, 8)
+    G.add_edge(4, 9)
+    G.add_edge(5, 6)
+    G.add_edge(7, 8)
+    return G

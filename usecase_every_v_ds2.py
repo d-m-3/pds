@@ -13,7 +13,6 @@ def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
           " checking if, \nfor every graph G, there exists a PDS of the" 
           " maximum size \nand d_s(v) = 2 for every vertex v of G."
           " \nPlease wait...")
-    progress = 0
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         pds_v_ds2 = pds.get_pds_every_v_ds2(G)
@@ -25,13 +24,11 @@ def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
             # Draw all the PDSs of the maximum size, for this graph.
             pds.draw_all_max_pds(G)
             break
-        if i >= ((graphs_nb / 10) + (progress * graphs_nb / 100)):
-            progress += 10
-            print(f"{progress}% done")
+        pds.display_progress(i, graphs_nb)
 
 def main():
     # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 14
+    vertices_nb = 12
     graphs_nb = 20
     check_every_v_ds2(vertices_nb, graphs_nb, only_nh=True)
     

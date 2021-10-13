@@ -13,7 +13,6 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and checking"
           " \nfor graphs that have not a PDS of the maximum size. Please wait...")
-    progress = 0
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         # Try to find a PDS of the maximum size.
@@ -24,13 +23,11 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
             pds.save_graph_and_figure(G, figure, filepath)
             print("\nEXCEPTION has been found and saved!")
             break
-        if i >= ((graphs_nb / 10) + (progress * graphs_nb / 100)):
-            progress += 10
-            print(f"{progress}% done")
+        pds.display_progress(i, graphs_nb)
 
 def main():
     vertices_nb = 14
-    graphs_nb = 50
+    graphs_nb = 100
     file = pds.next_valid_filepath("EXCEPTION-%s")
     create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=True)
 

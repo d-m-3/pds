@@ -1,4 +1,5 @@
 import os
+import sys
 import math
 import networkx as nx
 import gex
@@ -117,6 +118,27 @@ def get_pds_every_v_ds2(G):
         if every_v_ds2:
             return a_pds
     return [] # Returns an empty list if no such PDS could be found.
+
+def get_pds_every_v_ds2_and_u_w_ds3(G):
+    """
+    Returns a list containing one PDS of the maximum size, where for every
+    vertex v, d_s(v) = 2, except for at most two vertices u and w, 
+    where d_s(u) = d_s(w) = 3. The PDS may not be connected.
+    """
+    all_max_pds = get_all_max_pds(G)
+    for a_pds in all_max_pds:
+        every_v_ds2_one_u_ds3 = True
+        ds3 = 0
+        for vertex in a_pds:
+            if deg_subgraph(vertex, G, a_pds) != 2:
+                if ds3 > 2:
+                    every_v_ds2_one_u_ds3 = False
+                    break
+                else:
+                    ds3 += 1
+        if every_v_ds2_one_u_ds3 and ds3 <= 2:
+            return a_pds
+    return [] # Returns an empty list if no such PDS could be found.
         
 def hamiltonian_cycle(G):
     """
@@ -208,6 +230,14 @@ def draw_graph_from_file(filepath):
     Draws a previously saved graph, from "filepath", e.g., "to/graph.gz".
     """
     draw_graph(nx.read_edgelist(filepath), [])
+    
+def display_progress(count, total):
+    """
+    Displays progress in the console, for every 10% done.
+    """
+    percent = round(100.0 * count / float(total), 1)
+    if percent % 10 == 0:
+        print(f"{int(percent)}% done.")
 
 if __name__ == '__main__':
     print("\nYou can import this module with : \"import pds_cubic\"")

@@ -92,6 +92,19 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         """
         G = gex.G_test_6()
         self.assertEqual(pds.get_pds_every_v_ds2(G), [0, 1, 4, 5])
+        G1 = gex.G_test_10()
+        self.assertEqual(pds.get_pds_every_v_ds2(G1), 
+                         [0, 1, 2, 3, 4, 5, 9])
+        
+        
+    def test_get_pds_every_v_ds2_and_u_w_ds3(self):
+        """
+        Tests the function `get_pds_every_v_ds2_and_u_w_ds3`.
+        """
+        G = gex.G_test_10_2ds3()
+        pds.draw_graph(G, pds.get_pds_every_v_ds2_and_u_w_ds3(G))
+        self.assertEqual(pds.get_pds_every_v_ds2_and_u_w_ds3(G), 
+                         [0, 1, 2, 3, 5, 6, 7])
         
     def test_hamiltonian_cycle(self):
         """
