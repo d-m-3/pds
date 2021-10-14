@@ -16,7 +16,8 @@ pip install -r requirements.txt
 - `usecase_draw_1_pds.py` is used to draw cubic graphs up to 28 vertices.
 - `usecase_draw_all_pds.py` is used to draw different (or all) PDSs of the same non-Hamiltonian cubic graph.
 - `usecase_every_v_in_pds.py` is used to check if every vertex is part of a PDS of the maximum size.
-- `usecase_every_v_ds2.py` is used to check if, for every graph, there exists a PDS of the maximum size and for every vertex v, d_s(v) = 2.
+- `usecase_every_v_ds2.py` is used to check if, for every graph, there exists a PDS of the maximum size and d_s(v) = 2 for every vertex v.
+- `usecase_every_v_ds2_ds3.py` is used to check if, for every graph, there exists a PDS of the maximum size and d_s(v) = 2 for every vertex v, except for at most `ds3_nb`, where d_s(v) = 3.
 - `usecase_create_nham_graph.py` is used to create one (ore more) cubic graph(s) with no Hamiltonian cycle.
 - `gex.py` contains specific graphs, notably, exceptions of 8 vertices, that do not have a PDS of the maximum size, and graphs used for unit tests.
 
