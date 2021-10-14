@@ -1,5 +1,4 @@
 import os
-import sys
 import math
 import networkx as nx
 import gex
@@ -120,26 +119,26 @@ def get_pds_every_v_ds2(G):
             return a_pds
     return [] # Returns an empty list if no such PDS could be found.
 
-def get_pds_every_v_ds2_and_u_w_ds3(G):
+def get_pds_every_v_ds2_and_ds3(G, ds3_nb):
     """
     Returns a list containing one PDS of the maximum size, where for every
-    vertex v, d_s(v) = 2, except for at most two vertices u and w, 
-    where d_s(u) = d_s(w) = 3. The PDS may not be connected.
+    vertex v, d_s(v) = 2, except for at most "ds3_nb", where d_s(v) = 3. 
+    The PDS may not be connected.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
-        every_v_ds2_two_ds3 = True
+        every_v_ds2_ds3 = True
         ds3 = 0
         for vertex in a_pds:
             if deg_subgraph(vertex, G, a_pds) != 2:
-                if ds3 > 2:
-                    every_v_ds2_two_ds3 = False
+                if ds3 >= ds3_nb:
+                    every_v_ds2_ds3 = False
                     break
                 else:
                     ds3 += 1
-        if every_v_ds2_two_ds3 and ds3 <= 2:
-            return a_pds
-    return [] # Returns an empty list if no such PDS could be found.
+        if every_v_ds2_ds3 and ds3 <= ds3_nb:
+            return a_pds, ds3
+    return [], -1 # Returns an empty list if no such PDS could be found.
         
 def hamiltonian_cycle(G):
     """

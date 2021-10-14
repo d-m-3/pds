@@ -96,15 +96,29 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         self.assertEqual(pds.get_pds_every_v_ds2(G1), 
                          [0, 1, 2, 3, 4, 5, 9])
         
-        
-    def test_get_pds_every_v_ds2_and_u_w_ds3(self):
+    def test_get_pds_every_v_ds2_and_ds3(self):
         """
         Tests the function `get_pds_every_v_ds2_and_u_w_ds3`.
         """
         G = gex.G_test_10_2ds3()
-        pds.draw_graph(G, pds.get_pds_every_v_ds2_and_u_w_ds3(G))
-        self.assertEqual(pds.get_pds_every_v_ds2_and_u_w_ds3(G), 
-                         [0, 1, 2, 3, 5, 6, 7])
+        a_pds, ds3 = pds.get_pds_every_v_ds2_and_ds3(G, 2)
+        self.assertEqual(a_pds, [0, 1, 2, 3, 5, 6, 7])
+        self.assertEqual(ds3, 2)
+        a_pds_2, ds3_2 = pds.get_pds_every_v_ds2_and_ds3(G, 1)
+        self.assertEqual(a_pds_2, [])
+        self.assertEqual(ds3_2, -1)
+        
+        G1 = gex.G_test_10()
+        a_pds_3, ds3_3 = pds.get_pds_every_v_ds2_and_ds3(G1, 2)
+        self.assertEqual(a_pds_3, [0, 1, 2, 3, 4, 5, 9])
+        self.assertEqual(ds3_3, 0)
+        
+        # Test the special case where d_s = 2 for every vertex v in the PDS.
+        G2 = gex.G_test_6()
+        a_pds_4, ds3_4 = pds.get_pds_every_v_ds2_and_ds3(G2, 0)
+        self.assertEqual(a_pds_4, [0, 1, 4, 5])
+        self.assertEqual(ds3_4, 0)
+
         
     def test_hamiltonian_cycle(self):
         """

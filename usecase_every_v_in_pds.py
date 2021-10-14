@@ -23,8 +23,8 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
 
 def main():
     # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 22
-    graphs_nb = 100
+    vertices_nb = 24
+    graphs_nb = 10
     check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False) 
 
 if __name__ == '__main__':
