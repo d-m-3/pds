@@ -184,7 +184,7 @@ def get_connected_cubic_graph(vertices_nb, only_nh):
 
 def get_k_regular_bipartite_graph(vertices_nb, k):
     """
-    Returns a k-regular bipartite graph on "vertices_nb" of vertices.
+    Returns a random k-regular bipartite graph on "vertices_nb" of vertices.
     """
     if vertices_nb % 2 != 0:
         # The number of vertices must be even.
@@ -206,16 +206,16 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
         for _ in range(0, k):
             # Sort vertices of Y according to their increasing degree.
             incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])
-            # Get the smaller degree in Y.
-            smaller_deg_Y = incr_deg_Y[0][1]
-            # Get a list of all vertices in Y that have the smaller degree.
-            list_Y = [i for (i, deg) in incr_deg_Y if deg == smaller_deg_Y]
+            # Get the currently smallest degree in Y.
+            smallest_deg_Y = incr_deg_Y[0][1]
+            # Get a list of all vertices in Y that have the smallest degree.
+            list_Y = [i for (i, deg) in incr_deg_Y if deg == smallest_deg_Y]
             # Remove vertex in list_Y, if the edge v_X -- v_Y already exists.
             for v_Y in list_Y:
                 if G.has_edge(v_X, v_Y):
                     list_Y.remove(v_Y)
             # Get a random vertex of list_Y.
-            # Note that list_Y has now only appropriate candidates.
+            # Note that list_Y contains now only appropriate candidates.
             v_Y = random.choice(list_Y)
             G.add_edge(v_X, v_Y)
     return G
