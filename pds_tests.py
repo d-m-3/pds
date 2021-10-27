@@ -119,7 +119,6 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         a_pds_4, ds3_4 = pds.get_pds_every_v_ds2_and_ds3(G2, 0)
         self.assertEqual(a_pds_4, [0, 1, 4, 5])
         self.assertEqual(ds3_4, 0)
-
         
     def test_hamiltonian_cycle(self):
         """
@@ -131,7 +130,20 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         # The Petersen graph is a cubic non-Hamiltonian graph.
         G1 = nx.generators.small.petersen_graph()
         self.assertEqual(pds.hamiltonian_cycle(G1), None)
-               
+        
+    def test_get_k_regular_bipartite_graph(self):
+        """
+        Tests the function `get_k_regular_bipartite_graph`.
+        """
+        n = 18
+        k = 4
+        G = pds.get_k_regular_bipartite_graph(n, k)
+        # Check that the graph is bipartite.
+        self.assertEqual(nx.algorithms.bipartite.is_bipartite(G), True)
+        # Check that every vertex has degree k.
+        for v in G.nodes():
+            self.assertEqual(G.degree(v), k)
+        
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestMaxPdsCubicGraphs)
     unittest.TextTestRunner(verbosity=2).run(suite)
