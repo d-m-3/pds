@@ -10,7 +10,7 @@ def main():
     pds.draw_graph(G, max_pds, bipartite_layout=True)
     for v in G.nodes():
         if G.degree(v) != k:
-            print(v)
+            print("ERR", v)
 
 if __name__ == '__main__':
     main()
