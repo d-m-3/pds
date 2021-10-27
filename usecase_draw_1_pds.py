@@ -1,8 +1,8 @@
-import pds_cubic as pds
+import pds
 
 
 def main():
-    vertices_nb = 10
+    vertices_nb = 18
     # Creates a random cubic graph with the number of vertices given above,
     # and draws the graph, with the vertices of a PDS of the maximum size in red.
     # Only connected graphs are considered.

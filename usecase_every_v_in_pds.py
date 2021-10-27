@@ -1,4 +1,4 @@
-import pds_cubic as pds
+import pds
 
 
 def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
@@ -23,9 +23,9 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
 
 def main():
     # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 24
+    vertices_nb = 16
     graphs_nb = 10
-    check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False) 
+    check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=True) 
 
 if __name__ == '__main__':
     main()

@@ -1,4 +1,4 @@
-import pds_cubic as pds
+import pds
 
     
 def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):

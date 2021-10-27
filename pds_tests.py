@@ -1,6 +1,6 @@
 import unittest
 import networkx as nx
-import pds_cubic as pds
+import pds
 import gex
 
 
@@ -40,9 +40,10 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         """
         Tests the function `pds_size`.
         """
-        self.assertEqual(pds.pds_size(8), 5)
-        self.assertEqual(pds.pds_size(14), 9)
-        self.assertEqual(pds.pds_size(20), 13)
+        self.assertEqual(pds.pds_size(8, 3), 5)
+        self.assertEqual(pds.pds_size(14, 3), 9)
+        self.assertEqual(pds.pds_size(20, 3), 13)
+        self.assertEqual(pds.pds_size(24, 5), 19)
         
     def test_is_subgraph_a_pds(self):
         """

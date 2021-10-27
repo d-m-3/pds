@@ -1,5 +1,5 @@
 import networkx as nx
-import pds_cubic as pds
+import pds
 
 
 def create_nham_cubic_graph(vertices_nb, filepath):

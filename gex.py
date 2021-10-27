@@ -118,3 +118,23 @@ def G_test_10_2ds3():
     G.add_edge(5, 6)
     G.add_edge(7, 8)
     return G
+
+def G_bipartite_10():
+    G = nx.Graph()
+    G.add_edge(0, 1)
+    G.add_edge(0, 2)
+    G.add_edge(0, 3)
+    G.add_edge(9, 1)
+    G.add_edge(9, 3)
+    G.add_edge(9, 4)
+    G.add_edge(8, 2)
+    G.add_edge(8, 3)
+    G.add_edge(8, 5)
+    G.add_edge(7, 2)
+    G.add_edge(7, 4)
+    G.add_edge(7, 5)
+    G.add_edge(6, 1)
+    G.add_edge(6, 4)
+    G.add_edge(6, 5)
+    return G
+               

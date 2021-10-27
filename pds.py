@@ -1,7 +1,8 @@
 import os
 import math
-import networkx as nx
+import random
 import gex
+import networkx as nx
 import matplotlib.pyplot as plt
 from itertools import combinations
 
@@ -36,14 +37,14 @@ def get_combinations_of_subsets(G):
     of vertices of PDSs of the maximum size.
     """
     return list(combinations(range(G.number_of_nodes()), 
-                             pds_size(G.number_of_nodes())))
+                             pds_size(G.number_of_nodes(), G.degree[0])))
 
-def pds_size(vertices_nb):
+def pds_size(vertices_nb, k):
     """
     Returns the maximum possible size of a PDS, according to the number of 
-    vertices, in cubic graphs.
+    vertices, in k-regular graphs.
     """
-    return math.floor((2 * vertices_nb + 1)/ 3)
+    return math.floor(((vertices_nb * (k - 1)) + 1)/ k)
 
 def is_subgraph_a_pds(G, subgraph):
     """
@@ -76,7 +77,7 @@ def is_pds_max(G, max_pds, vertices_nb):
     floor((2 * |V|))/3). Otherwise, returns False. For cubic graphs of
     eight vertices, three graph exceptions are not considered.
     """
-    if len(max_pds) == pds_size(vertices_nb):
+    if len(max_pds) == pds_size(vertices_nb, G.degree[0]):
         return True
     else:
         if vertices_nb != 8:
@@ -106,7 +107,8 @@ def get_nodes_not_part_of_pds(G):
 def get_pds_every_v_ds2(G):
     """
     Returns a list containing one PDS of the maximum size, where for every
-    vertex v, d_s(v) = 2. The PDS may not be connected.
+    vertex v, d_s(v) = 2, in 3-regular (cubic) graphs. 
+    The PDS may not be connected.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
@@ -122,8 +124,8 @@ def get_pds_every_v_ds2(G):
 def get_pds_every_v_ds2_and_ds3(G, ds3_nb):
     """
     Returns a list containing one PDS of the maximum size, where for every
-    vertex v, d_s(v) = 2, except for at most "ds3_nb", where d_s(v) = 3. 
-    The PDS may not be connected.
+    vertex v, d_s(v) = 2, except for at most "ds3_nb", where d_s(v) = 3,
+    in 3-regular (cubic) graphs. The PDS may not be connected.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
@@ -180,18 +182,62 @@ def get_connected_cubic_graph(vertices_nb, only_nh):
             G = nx.random_regular_graph(3, vertices_nb, seed=None)
     return G
 
-def draw_graph(G, max_pds):
+def get_k_regular_bipartite_graph(vertices_nb, k):
+    """
+    Returns a k-regular bipartite graph on "vertices_nb" of vertices.
+    """
+    if vertices_nb % 2 != 0:
+        # The number of vertices must be even.
+        return None
+    
+    # Create a graph.
+    G = nx.Graph()
+    vertices_list = [i for i in range(0, vertices_nb)]
+    X_int = vertices_list[:len(vertices_list)//2]
+    Y_int = vertices_list[len(vertices_list)//2:]
+    # Add the vertices in X and Y, and create sets X and Y.
+    G.add_nodes_from(X_int, bipartite=0)
+    G.add_nodes_from(Y_int, bipartite=1)
+    X = {n for n, d in G.nodes(data=True) if d["bipartite"] == 0}
+    Y = set(G) - X
+    
+    # Add k edges for every vertex in X.
+    for v_X in X:
+        for _ in range(0, k):
+            # Sort vertices of Y according to their increasing degree.
+            incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])
+            # Get the smaller degree in Y.
+            smaller_deg_Y = incr_deg_Y[0][1]
+            # Get a list of all vertices in Y that have the smaller degree.
+            list_Y = [i for (i, deg) in incr_deg_Y if deg == smaller_deg_Y]
+            # Remove vertex in list_Y, if the edge v_X -- v_Y already exists.
+            for v_Y in list_Y:
+                if G.has_edge(v_X, v_Y):
+                    list_Y.remove(v_Y)
+            # Get a random vertex of list_Y.
+            # Note that list_Y has now only appropriate candidates.
+            v_Y = random.choice(list_Y)
+            G.add_edge(v_X, v_Y)
+    return G
+
+def draw_graph(G, max_pds, bipartite_layout=False):
     """
     Draws the graph and highlights the vertices that belong to
-    a maximum size PDS, in red. Returns the drawn graph.
+    a PDS of the maximum size, in red. Returns the drawn graph.
+    By default, ciruclar layout is used. 
+    Bipartite layout can be used as an option.
     """
-    pos = nx.circular_layout(G) # Or use nx.spring_layout(G)
+    if bipartite_layout:
+        X = nx.algorithms.bipartite.sets(G)[0]
+        pos = nx.drawing.layout.bipartite_layout(G, X)
+    else:
+        pos = nx.circular_layout(G)
     color_dict = {}
     for vertex in max_pds:
         color_dict[vertex] = 'red'
     color_list = [color_dict.get(node, 'yellow') for node in G.nodes()]
     plt.figure(1,figsize=(12,12))
-    nx.draw(G, pos, with_labels = True, font_size = 25, node_size = 1500,
+    nx.draw(G, pos, with_labels = True, font_size = 30, node_size = 2000,
             node_color=color_list, edge_color = 'g', width = 3, alpha = 0.7)
     figure = plt.gcf()
     plt.show()
@@ -204,6 +250,13 @@ def draw_all_max_pds(G):
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
         draw_graph(G, a_pds)
+        
+def save_graph(G, filepath):
+    """
+    Saves the graph, as an edge list, that can be imported later, in the 
+    given filepath (path/to/file). The file extension is added automatically.
+    """
+    nx.write_edgelist(G, f"{filepath}.gz")
 
 def save_graph_and_figure(G, figure, filepath):
     """
