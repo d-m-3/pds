@@ -188,7 +188,7 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
     """
     if vertices_nb % 2 != 0:
         # The number of vertices must be even.
-        return None
+        return None #TODO: exception
     
     # Create a graph.
     G = nx.Graph()
@@ -204,53 +204,35 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
     # Add k edges for every vertex in X.
     for v_X in X:
         for _ in range(0, k):
-            v_Y = _get_v_Y(G, Y, v_X, k)
+            v_Y = _get_appropriate_random_vertex_in_Y(G, Y, v_X, k)
             G.add_edge(v_X, v_Y)
     return G
 
-# TODO: NOT WORKING
-# ================= 
-def _get_v_Y(G, Y, v_X, k):
-    # Sort vertices of Y according to their increasing degree.
+def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
+    """
+    TODO: doc
+    """
+    # List of vertices in Y, sorted by increasing degree.
     incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])
-    list_Y = [i for (i, deg) in incr_deg_Y]
-    
-    print(incr_deg_Y) #OK
-    print(list_Y) #OK
-    
-    for v_Y in list_Y:
-        if G.has_edge(v_X, v_Y) or G.degree(v_Y) == k:
-            list_Y.remove(v_Y)
-    
-    if len(list_Y) == 1:
-        v_Y = list_Y[0]
-    else:
-        v_Y = random.choice(list_Y[0:2])
-    return v_Y
-    
-    '''
+    # Remove vertices in Y, if d(v) = k.
+    incr_deg_Y = [(i, deg) for (i, deg) in incr_deg_Y if deg != k]
+    for v_Y in incr_deg_Y:
+        if G.has_edge(v_X, v_Y[0]):
+            # Remove v_Y in Y's candidate list, if the edge already exists.
+            incr_deg_Y.remove(v_Y)
     # Get the currently smallest degree in Y.
     smallest_deg_Y = incr_deg_Y[0][1]
-    # Get a list of all vertices in Y that have the smallest degree.
-    list_Y = [i for (i, deg) in incr_deg_Y if deg == smallest_deg_Y]
-    # Remove vertex in list_Y, if the edge v_X -- v_Y already exists,
-    # or if v_Y has already k edges.
-    
-    if len(list_Y) >= 2:
-        v_Y = random.choice(list_Y)
-    elif len(list_Y) == 1:
-        v_Y = list_Y[0]
-    elif len(list_Y) == 0:
-        list_Y = [i for (i, deg) in incr_deg_Y]
-        for v_Y in list_Y:
-            if G.has_edge(v_X, v_Y) or G.degree(v_Y) == k:
-                list_Y.remove(v_Y)
-        v_Y = list_Y[0]
-    print(v_Y)
+    # Get only the candidates in Y that have currently the smallest degree.
+    incr_deg_Y = [(i, deg) for (i, deg) in incr_deg_Y if deg == smallest_deg_Y]
+    if len(incr_deg_Y) == 1:
+        v_Y = incr_deg_Y[0][0]
+    else:
+        # If the length of the candidate's list >=2, randomly choose one.
+        v_Y = random.choice(incr_deg_Y)[0]
+        while G.has_edge(v_X, v_Y):
+            v_Y = random.choice(incr_deg_Y)[0]
     return v_Y
-    '''
     
-
 def draw_graph(G, max_pds, bipartite_layout=False):
     """
     Draws the graph and highlights the vertices that belong to
