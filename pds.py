@@ -17,7 +17,7 @@ def find_one_max_pds(G):
     for subset in combs:
         if is_subgraph_a_pds(G, list(subset)):
             return list(subset)
-    return [] # Returns an empty list if no PDS of the max. size could be found
+    return [] # Returns an empty list if no PDS of the max. size could be found.
 
 def get_all_max_pds(G):
     """
