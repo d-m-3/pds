@@ -2,7 +2,6 @@ import pds
 
 
 def main():
-    # There are exceptions for n = 24, k = 5 !!!
     n = 24
     k = 5
     G = pds.get_k_regular_bipartite_graph(n, k)
