@@ -187,9 +187,7 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
     Returns a random k-regular bipartite graph on "vertices_nb" of vertices.
     """
     if vertices_nb % 2 != 0:
-        # The number of vertices must be even.
-        return None #TODO: exception
-    
+        raise ValueError("The number of vertices must be even.")
     # Create a graph.
     G = nx.Graph()
     vertices_list = [i for i in range(0, vertices_nb)]
@@ -200,7 +198,6 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
     G.add_nodes_from(Y_int, bipartite=1)
     X = {n for n, d in G.nodes(data=True) if d["bipartite"] == 0}
     Y = set(G) - X
-    
     # Add k edges for every vertex in X.
     for v_X in X:
         for _ in range(0, k):
@@ -210,7 +207,9 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
 
 def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
     """
-    TODO: doc
+    In the k-regular bipartite graph G = (X,Y,E), returns an appropriate and 
+    partly random vertex v_Y of set Y, for the given vertex v_X in X, 
+    such that that the edge V_x--V_y can be added, in order to contruct G.
     """
     # List of vertices in Y, sorted by increasing degree.
     incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])

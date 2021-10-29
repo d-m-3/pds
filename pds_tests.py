@@ -135,14 +135,16 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         """
         Tests the function `get_k_regular_bipartite_graph`.
         """
-        n = 18
-        k = 4
-        G = pds.get_k_regular_bipartite_graph(n, k)
-        # Check that the graph is bipartite.
-        self.assertEqual(nx.algorithms.bipartite.is_bipartite(G), True)
-        # Check that every vertex has degree k.
-        for v in G.nodes():
-            self.assertEqual(G.degree(v), k)
+        n = 28
+        k = 5
+        # Tests for 50 different graphs.
+        for graph in range(0, 50):
+            G = pds.get_k_regular_bipartite_graph(n, k)
+            # Check that the graph is bipartite.
+            self.assertEqual(nx.algorithms.bipartite.is_bipartite(G), True)
+            # Check that every vertex has degree k.
+            for v in G.nodes():
+                self.assertEqual(G.degree(v), k)
         
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestMaxPdsCubicGraphs)
