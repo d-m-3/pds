@@ -6,7 +6,7 @@ import gex
 
 class TestMaxPdsCubicGraphs(unittest.TestCase):
     """
-    Unit tests for the functions in `pds_cubic.py` (main library)
+    Unit tests for the functions in `pds.py` (main library)
     """
 
     def test_find_one_max_pds(self):
