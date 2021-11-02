@@ -42,7 +42,7 @@ def pds_k_regular_bipartite_algorithm(BG):
 
 
 def main():
-    n = 24
+    n = 12
     k = 3
     graphs_nb = 100
     for i in range(1, graphs_nb + 1):

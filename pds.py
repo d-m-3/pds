@@ -207,9 +207,9 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
 
 def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
     """
-    In the k-regular bipartite graph G = (X,Y,E), returns an appropriate and 
-    partly random vertex v_Y of set Y, for the given vertex v_X in X, 
-    such that that the edge V_x--V_y can be added, in order to contruct G.
+    Helper method to construct a k-regular bipartite graph G = (X,Y,E).
+    Returns an appropriate and partly random vertex v_Y in Y, for the given 
+    vertex v_X in X, such that that the edge V_x--V_y can be added.
     """
     # List of vertices in Y, sorted by increasing degree.
     incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])
@@ -268,7 +268,7 @@ def save_graph(G, filepath):
     Saves the graph, as an edge list, that can be imported later, in the 
     given filepath (path/to/file). The file extension is added automatically.
     """
-    nx.write_edgelist(G, f"{filepath}.gz")
+    nx.write_edgelist(G, f"{filepath}.gz", data=False)
 
 def save_graph_and_figure(G, figure, filepath):
     """
@@ -277,7 +277,7 @@ def save_graph_and_figure(G, figure, filepath):
     The file extensions are added automatically.
     """
     figure.savefig(f"{filepath}.png")
-    nx.write_edgelist(G, f"{filepath}.gz")
+    nx.write_edgelist(G, f"{filepath}.gz", data=False)
     
 def next_valid_filepath(pattern):
     """
@@ -290,11 +290,11 @@ def next_valid_filepath(pattern):
         i += 1
     return pattern % i
     
-def draw_graph_from_file(filepath):
+def get_graph_from_file(filepath):
     """
-    Draws a previously saved graph, from "filepath", e.g., "to/graph.gz".
+    Returns the graph from "filepath", e.g., "to/graph.gz".
     """
-    draw_graph(nx.read_edgelist(filepath), [])
+    return nx.read_edgelist(filepath, nodetype=int)
     
 def display_progress(count, total):
     """
