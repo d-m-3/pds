@@ -61,7 +61,7 @@ def G_two_K4():
 
 def G_test_6():
     """
-    Returns a graph of 6 vertices, used for unit tests.
+    Returns a cubic graph of 6 vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 1)
@@ -77,7 +77,7 @@ def G_test_6():
 
 def G_test_10():
     """
-    Returns a graph of 10 vertices, used for unit tests.
+    Returns a cubic graph of 10 vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 4)
@@ -99,7 +99,7 @@ def G_test_10():
 
 def G_test_10_2ds3():
     """
-    Returns a graph of 10 vertices, used for unit tests.
+    Returns a cubic graph of 10 vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 1)
@@ -120,6 +120,9 @@ def G_test_10_2ds3():
     return G
 
 def G_bipartite_10():
+    """
+    Returns a cubic bipartite graph of 1o vertices, used for unit tests.
+    """
     G = nx.Graph()
     G.add_edge(0, 1)
     G.add_edge(0, 2)
@@ -136,5 +139,30 @@ def G_bipartite_10():
     G.add_edge(6, 1)
     G.add_edge(6, 4)
     G.add_edge(6, 5)
+    return G
+
+def G_test_12():
+    """
+    Returns a cubic graph of 12 vertices.
+    """
+    G = nx.Graph()
+    G.add_edge(0, 3)
+    G.add_edge(0, 4)
+    G.add_edge(0, 5)
+    G.add_edge(1, 5)
+    G.add_edge(1, 7)
+    G.add_edge(1, 9)
+    G.add_edge(2, 6)
+    G.add_edge(2, 7)
+    G.add_edge(2, 10)
+    G.add_edge(3, 4)
+    G.add_edge(3, 11)
+    G.add_edge(4, 11)
+    G.add_edge(5, 11)
+    G.add_edge(6, 8)
+    G.add_edge(6, 9)
+    G.add_edge(7, 8)
+    G.add_edge(8, 10)
+    G.add_edge(9, 10)
     return G
                

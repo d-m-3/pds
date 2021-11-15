@@ -14,6 +14,7 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
           " PDS of the maximum size. \nPlease wait...")
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
+        #G = pds.get_k_regular_bipartite_graph(vertices_nb, 3)
         nodes_not_in_pds = pds.get_nodes_not_part_of_pds(G)
         if len(nodes_not_in_pds) != 0:
             pds.draw_graph(G, [])
@@ -22,10 +23,10 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
         pds.display_progress(i, graphs_nb)
 
 def main():
-    # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 16
-    graphs_nb = 10
-    check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=True) 
+    # If only_nh=True, vertices_nb must be >= 108
+    vertices_nb = 10
+    graphs_nb = 500
+    check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False) 
 
 if __name__ == '__main__':
     main()

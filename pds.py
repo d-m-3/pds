@@ -255,13 +255,13 @@ def draw_graph(G, max_pds, bipartite_layout=False):
     plt.show()
     return figure
 
-def draw_all_max_pds(G):
+def draw_all_max_pds(G, bipartite_layout=False):
     """
     Draws all the PDSs of the maximum size, for the given graph G.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
-        draw_graph(G, a_pds)
+        draw_graph(G, a_pds, bipartite_layout)
         
 def save_graph(G, filepath):
     """
