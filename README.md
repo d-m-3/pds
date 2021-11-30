@@ -7,7 +7,7 @@ Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subg
 The project contains also several *usecases* that show specific usages of the framework. Some usecases were used to check empirically ideas and conjectures about PDSs in k-regular graphs. These usecases are described in the section *Usage* (see below).
 
 ## Install
-### Linux - Command Line (bash)
+### Linux
 In a `bash` terminal, type:
 ```bash
 git clone https://github.com/d-m-3/pds.git
