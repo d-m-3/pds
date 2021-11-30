@@ -3,9 +3,9 @@ import pds
 
 def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
-    Creates random cubic graphs of "vertices_nb" of vertices 
-    and checks if every vertex of the graph is part of at least one PDS
-    of the maximum size. If such a graph is found, i.e., a graph that 
+    Creates random cubic graphs or k-regular bipartite graphs of "vertices_nb" 
+    of vertices  and checks if every vertex of the graph is part of at least 
+    one PDS of the maximum size. If such a graph is found, i.e., a graph that 
     contains vertices that are not part in any PDS of the maximum size, the
     graph is drawn and the search is interrupted.
     If "only_nh" is True, only cubic graphs that do not have a Hamiltonian 
