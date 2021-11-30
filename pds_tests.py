@@ -52,6 +52,11 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         G = gex.G_test_6()
         self.assertEqual(pds.is_subgraph_a_pds(G, [1, 2, 3, 4]), True)
         self.assertEqual(pds.is_subgraph_a_pds(G, [0, 1, 2, 3]), False)
+        G = gex.G_test_12()
+        self.assertEqual(pds.is_subgraph_a_pds(G, [0, 1, 2, 3, 4, 6, 7, 9]),
+                         True)
+        self.assertEqual(pds.is_subgraph_a_pds(G, [0, 1, 2, 5, 6, 7, 8, 9]), 
+                         False)
         
     def test_is_vertex_satisfied_in_subgraph(self):
         """
@@ -60,8 +65,13 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         G = gex.G_test_6()
         subg = [0, 1, 4, 5]
         self.assertEqual(pds.is_vertex_satisfied_in_subgraph(0, G, subg), True)
-        subg = [0, 1, 2, 3]
-        self.assertEqual(pds.is_vertex_satisfied_in_subgraph(3, G, subg), False)
+        sub = [0, 1, 2, 3]
+        self.assertEqual(pds.is_vertex_satisfied_in_subgraph(3, G, sub), False)
+        G = gex.G_test_12()
+        sub = [0, 1, 2, 5, 6, 7, 8, 9]
+        self.assertEqual(pds.is_vertex_satisfied_in_subgraph(0, G, sub), False)
+        sub = [0, 1, 2, 5, 6, 7, 8, 9]
+        self.assertEqual(pds.is_vertex_satisfied_in_subgraph(2, G, sub), True)
     
     def test_deg_subgraph(self):
         """
@@ -72,6 +82,10 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         self.assertEqual(pds.deg_subgraph(0, G, subg), 2)
         subg = [0, 1, 2, 3]
         self.assertEqual(pds.deg_subgraph(3, G, subg), 1)
+        G = gex.G_test_12()
+        subg = [0, 1, 2, 3, 4, 6, 7, 9]
+        self.assertEqual(pds.deg_subgraph(2, G, subg), 2)
+        self.assertEqual(pds.deg_subgraph(7, G, subg), 2)
    
     def test_is_pds_max(self):
         """
@@ -130,6 +144,23 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         # The Petersen graph is a cubic non-Hamiltonian graph.
         G1 = nx.generators.small.petersen_graph()
         self.assertEqual(pds.hamiltonian_cycle(G1), None)
+        
+    def test_get_connected_cubic_graph(self):
+        """
+        Tests the function `get_connected_cubic_graph`.
+        """
+        n = 16
+        # Tests for 10 different graphs.
+        for graph in range(0, 10):
+            G = pds.get_connected_cubic_graph(n, only_nh=False)
+            # Check that every vertex has degree 3.
+            for v in G.nodes():
+                self.assertEqual(G.degree(v), 3)
+        # Tests for one non-Hamiltonian graphs.
+        G = pds.get_connected_cubic_graph(n, only_nh=True)
+        # Check that every vertex has degree 3.
+        for v in G.nodes():
+            self.assertEqual(G.degree(v), 3)
         
     def test_get_k_regular_bipartite_graph(self):
         """

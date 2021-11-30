@@ -1,6 +1,8 @@
 # pds
 ## Proportionally dense subgraphs in cubic graphs - Overview
-`pds` is a framework written in Python for generating and drawing random cubic graphs, showing a proportionally dense subgraph (PDS) of the maximum size, and searching for graphs that do not have a PDS of the maximum size. Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579)*. For cubic graphs, the maximum size of a PDS is floor((2*|V| + 1)/3). A specific search for cubic graphs with no Hamiltonian cycle can be done. Also, cubic graphs with no Hamiltonian cycle can be generated. Finally, it is possible to check that every vertex is part of a PDS of the maximum size and to get all the PDSs of the same non-Hamiltonian cubic graph.
+`pds` is a framework written in Python for generating and drawing random k-regular graphs, computing and showing proportionally dense subgraphs (PDSs) of the maximum size.
+
+and searching for graphs that do not have a PDS of the maximum size. Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579)*. For cubic graphs, the maximum size of a PDS is floor((2*|V| + 1)/3). A specific search for cubic graphs with no Hamiltonian cycle can be done. Also, cubic graphs with no Hamiltonian cycle can be generated. Finally, it is possible to check that every vertex is part of a PDS of the maximum size and to get all the PDSs of the same non-Hamiltonian cubic graph.
 
 ## Install
 ### Command line (bash)

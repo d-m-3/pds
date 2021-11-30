@@ -4,7 +4,7 @@ import pds
 
 def create_nham_cubic_graph(vertices_nb, filepath):
     """
-    Creates a non-Hamiltonian cubic graph of "vertices_nb", saves it in the 
+    Creates a non-Hamiltonian cubic graph on "vertices_nb", saves it in the 
     given folder, with the given "graph_nb" at the end of the filename. It also 
     saves the figure in .png in the same directory. 
     """

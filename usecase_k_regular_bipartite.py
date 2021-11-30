@@ -2,7 +2,7 @@ import pds
 
 
 def main():
-    n = 10
+    n = 12
     k = 3
     
     # Draw a k-regular bipartite graph with its PDS of the maximum size.

@@ -73,9 +73,9 @@ def deg_subgraph(vertex, G, subgraph):
 
 def is_pds_max(G, max_pds, vertices_nb):
     """
-    Returns True if the given PDS is of the maximum size, i.e., 
-    floor((2 * |V|))/3). Otherwise, returns False. For cubic graphs of
-    eight vertices, three graph exceptions are not considered.
+    Returns True if the given PDS is of the maximum size. Otherwise, 
+    returns False. For cubic graphs of eight vertices, three graph exceptions 
+    are not considered.
     """
     if len(max_pds) == pds_size(vertices_nb, G.degree[0]):
         return True
@@ -258,6 +258,8 @@ def draw_graph(G, max_pds, bipartite_layout=False):
 def draw_all_max_pds(G, bipartite_layout=False):
     """
     Draws all the PDSs of the maximum size, for the given graph G.
+    By default, ciruclar layout is used. 
+    Bipartite layout can be used as an option.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:

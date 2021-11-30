@@ -8,7 +8,8 @@ def create_graph(n, k):
 def main():
     '''n = 12
     k = 3
-    create_graph(n, k)'''
+    create_graph(n, k)
+    '''
     
     BG = pds.get_graph_from_file("special_graphs/3-regular-12-vertices.gz")
     max_pds = pds.find_one_max_pds(BG)
