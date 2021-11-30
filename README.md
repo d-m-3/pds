@@ -36,7 +36,7 @@ pip install matplotlib
 5. Get the files of the project. Two options:\
 a) With `git clone`. In a terminal, type:
 `git clone https://github.com/d-m-3/pds.git`\
-b) Or click on *Code - Download ZIP*\ 
+b) Or click on *Code - Download ZIP*
 on the project's GitHub page: https://github.com/d-m-3/pds
 
 ## Usage
