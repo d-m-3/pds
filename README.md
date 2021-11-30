@@ -20,11 +20,11 @@ pip install -r requirements.txt
 ```bash
 python3 --version
 ```
-2. Download pip. In a terminal, type:
+2. Download `pip`. In a terminal, type:
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ```
-3. Install pip. In a terminal, type:
+3. Install `pip`. In a terminal, type:
 ```bash
 python3 get-pip.py
 ```
@@ -33,8 +33,12 @@ python3 get-pip.py
 pip install networkx
 pip install matplotlib
 ```
-5. Get the files of the project with git clone or by clicking on *Code - Download ZIP* 
-on the project's GitHub page: https://github.com/d-m-3/pds
+5. Get the files of the project. Two options: 
+a) With `git clone`. In a terminal, type:
+```bash
+git clone https://github.com/d-m-3/pds.git
+```
+b) Or click on *Code - Download ZIP*\ on the project's GitHub page: https://github.com/d-m-3/pds
 
 ## Usage
 - `pds.py` is the main library that can be imported as a module (see *External Usage* below).
