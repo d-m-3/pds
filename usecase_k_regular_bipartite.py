@@ -2,16 +2,21 @@ import pds
 
 
 def main():
+    """
+    It creates and draws a k-regular bipartite graph on a given number of 
+    vertices. It finds a PDS of the maximum size, and its vertices are 
+    colored in red. Alternatively, it tries to find a k-regular bipartite 
+    graph that has no PDS of the maximum size.
+    """
     n = 12
     k = 3
-    
+
     # Draw a k-regular bipartite graph with its PDS of the maximum size.
-    '''
     BG = pds.get_k_regular_bipartite_graph(n, k)
     max_pds = pds.find_one_max_pds(BG)
     pds.draw_graph(BG, max_pds, bipartite_layout=True)
-    '''
     
+    '''
     # Trying to find a graph that has not a PDS of the maximum size.
     graphs_nb = 100
     for i in range(1, graphs_nb + 1):
@@ -24,6 +29,7 @@ def main():
         # If no exception could be found, draw the last graph with its PDS.
         pds.display_progress(i, graphs_nb)
     pds.draw_graph(BG, max_pds, bipartite_layout=True)
+    '''
     
 if __name__ == '__main__':
     main()

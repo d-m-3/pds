@@ -4,15 +4,13 @@ import pds
 
 def create_nham_cubic_graph(vertices_nb, filepath):
     """
-    Creates a non-Hamiltonian cubic graph on "vertices_nb", saves it in the 
-    given folder, with the given "graph_nb" at the end of the filename. It also 
-    saves the figure in .png in the same directory. 
+    It creates a non-Hamiltonian cubic graph on a given number of vertices, 
+    saves it in the given folder, with the number of vertices at the end of 
+    the filename. It also saves the figure in .png in the same directory.
     """
     success = False
     # Tries for 50 graphs
     for i in range(50):
-        # Creates a random cubic graph.
-        # Looks only for connected cubic graphs.
         G = nx.random_regular_graph(3, vertices_nb, seed=None)
         while not nx.is_connected(G):
             G = nx.random_regular_graph(3, vertices_nb, seed=None)

@@ -2,12 +2,14 @@ import pds
 
 def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
     """
-    Creates random cubic graphs of "vertices_nb" of vertices 
-    and checks if, for every graph, there exists a PDS of the maximum size and 
-    for every vertex v, d_s(v) = 2. If there is no such PDS for a graph, the
-    graph and all the PDSs of the maximum size are drawn.
-    If "only_nh" is True, only cubic graphs that do not have a Hamiltonian 
-    cycle are considered (note that it takes much longer).
+    It creates random cubic graphs and tests if, for every graph, there exists 
+    a PDS of the maximum size and d_s(v) = 2 for every vertex v. If there is 
+    no such PDS for a graph, the graph and all the PDSs of the maximum size 
+    are drawn, and the program's execution is stopped. The number of vertices 
+    in a graph and the number of created and tested graphs can be defined. If 
+    the boolean "only_nh" is set to "True", only cubic graphs that do not have 
+    a Hamiltonian cycle are considered (please notice that it takes much 
+    longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and "
           "checking if, \nfor every graph G, there exists a PDS of the " 

@@ -3,20 +3,20 @@ import pds
 
 def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
-    Creates random cubic graphs or k-regular bipartite graphs of "vertices_nb" 
-    of vertices  and checks if every vertex of the graph is part of at least 
-    one PDS of the maximum size. If such a graph is found, i.e., a graph that 
-    contains vertices that are not part in any PDS of the maximum size, the
-    graph is drawn and the search is interrupted.
-    If "only_nh" is True, only cubic graphs that do not have a Hamiltonian 
-    cycle are considered (note that it takes much longer).
+    It creates random cubic graphs and tests if, for every graph, every vertex
+    is part of at least one PDS of the maximum size. If the program finds a 
+    graph in which there are vertices that are not part of any PDS, the graph 
+    is drawn, the vertices that are not part of any PDS are displayed, and 
+    the program's execution is stopped. The number of vertices in a graph and 
+    the number of created and tested graphs can be defined. If the boolean 
+    "only_nh" is set to "True", only cubic graphs that do not have a 
+    Hamiltonian cycle are considered (please notice that it takes much longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and"
           " checking if \nevery vertex of the graph is part of at least one"
           " PDS of the maximum size. \nPlease wait...")
     for i in range(1, graphs_nb + 1):
-        #G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
-        G = pds.get_k_regular_bipartite_graph(vertices_nb, 3)
+        G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         nodes_not_in_pds = pds.get_nodes_not_part_of_pds(G)
         if len(nodes_not_in_pds) != 0:
             pds.draw_graph(G, [])

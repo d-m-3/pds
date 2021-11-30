@@ -1,5 +1,10 @@
 import networkx as nx
 
+"""
+It contains specific graphs used for unit tests and exceptions of cubic 
+graphs on eight vertices, i.e., cubic graphs that do not have a PDS of the 
+maximum size.
+"""
 
 def Gex1():
     """
