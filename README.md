@@ -5,10 +5,28 @@
 and searching for graphs that do not have a PDS of the maximum size. Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579)*. For cubic graphs, the maximum size of a PDS is floor((2*|V| + 1)/3). A specific search for cubic graphs with no Hamiltonian cycle can be done. Also, cubic graphs with no Hamiltonian cycle can be generated. Finally, it is possible to check that every vertex is part of a PDS of the maximum size and to get all the PDSs of the same non-Hamiltonian cubic graph.
 
 ## Install
-### Command line (bash)
+### Linux - command line (bash)
 ```bash
 git clone https://github.com/d-m-3/pds.git
 pip install -r requirements.txt
+```
+### Mac OS X and later
+1. Check that Python 3 is installed. In a terminal, type:
+```bash
+python3 --version
+```
+2. Download pip (terminal):
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+3. Install pip (terminal):
+```bash
+python3 get-pip.py
+```
+4. Install the modules `networkx` and `matplotlib` with pip (terminal):
+```bash
+pip install networkx
+pip install matplotlib
 ```
 
 ## Usage
