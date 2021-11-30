@@ -7,7 +7,7 @@ Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subg
 The project also contains several *use cases* that show specific usages of the framework. SSome use cases were used to check ideas and conjectures about PDSs in k-regular graphs empirically. These use cases are described in the section *Usage* (see below).
 
 ## Install
-### Linux
+### On Debian-based Linux
 In a `bash` terminal, type:
 ```bash
 sudo apt update
@@ -15,7 +15,7 @@ sudo apt install python3-pip
 git clone https://github.com/d-m-3/pds.git
 pip install -r requirements.txt
 ```
-### macOS
+### On macOS
 1. Check that Python 3 is installed. In a terminal, type:
 ```bash
 python3 --version
