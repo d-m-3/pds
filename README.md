@@ -10,6 +10,8 @@ The project contains also several *usecases* that show specific usages of the fr
 ### Linux
 In a `bash` terminal, type:
 ```bash
+sudo apt update
+sudo apt install python3-pip
 git clone https://github.com/d-m-3/pds.git
 pip install -r requirements.txt
 ```
