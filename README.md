@@ -33,7 +33,8 @@ python3 get-pip.py
 pip install networkx
 pip install matplotlib
 ```
-5. Get the files of the project with git clone or by clicking on *Code - Download ZIP* on the project's GitHub page: https://github.com/d-m-3/pdss
+5. Get the files of the project with git clone or by clicking on *Code - Download ZIP* 
+on the project's GitHub page: https://github.com/d-m-3/pds
 
 ## Usage
 - `pds.py` is the main library that can be imported as a module (see *External Usage* below).
