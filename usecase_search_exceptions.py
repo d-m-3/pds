@@ -3,16 +3,16 @@ import pds
     
 def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
     """
-    Goal: Search for exceptions, i.e., search for cubic graphs on 
-    n vertices that do not have a PDS of the maximum size, with n > 8.
-    Execution and details: It creates random cubic graphs and tests if 
-    they do not have a PDS of the maximum size. If such a graph is found, 
-    the graph is drawn, it is saved as a .png figure and as an edge list that 
-    can be imported later, and the program's execution is stopped. The number of 
-    vertices in a graph and the number of created and tested graphs can be 
-    defined. If the boolean "only_nh" is set to "True", only cubic graphs 
-    that do not have a Hamiltonian cycle are considered (please notice that 
-    it takes much longer).
+    Goal: Search for exceptions, i.e., search for cubic graphs on n vertices 
+    that have no PDS of the maximum size, with n > 8.
+    Execution and details: It creates random cubic graphs and tests if they 
+    do not have a PDS of the maximum size. If such a graph with no PDS of the 
+    maximum size is found, it is drawn, saved as a .png figure and as an edge 
+    list that can be imported later, and the program's execution is stopped. 
+    The number of vertices in a graph and the number of created and tested 
+    graphs can be defined. If the boolean "only_nh" is set to "True", only 
+    cubic graphs that do not have a Hamiltonian cycle are considered 
+    (please notice that it takes much longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and checking"
           " \nfor graphs that have not a PDS of the maximum size. Please wait...")
