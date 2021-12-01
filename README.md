@@ -4,7 +4,7 @@
 
 Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579)*.
 
-The project also contains several *use cases* that show specific usages of the framework. Some use cases were used to test ideas and conjectures about PDSs in cubic and k-regular bipartite graphs empirically. These use cases are described in the section *Usage and Details* (see below).
+The project also contains several *use cases* that show specific usages of the framework. Some use cases were used to test ideas and conjectures about PDSs in cubic and k-regular bipartite graphs empirically and computationally. These use cases are described in the section *Usage and Details* (see below).
 
 ## Installation
 ### On Debian-based Linux
