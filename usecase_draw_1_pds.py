@@ -2,11 +2,12 @@ import pds
 
 def main():
     """
-    It creates and draws a random cubic graph on a given number of vertices. 
-    It finds a PDS of the maximum size, and its vertices are colored in red. 
-    Alternatively, it can create and draw a random k-regular bipartite graph 
-    instead of a cubic graph. In that case, a specific layout for bipartite 
-    graphs can be used.
+    Goal: Draw a graph and show one PDS of the maximum size.
+    Execution and details: It creates a random cubic graph on a given number 
+    of vertices. It finds a PDS of the maximum size, draws the graph, and 
+    colors the vertices of the PDS in red. Alternatively, it can create and 
+    draw a random k-regular bipartite graph instead of a cubic graph. In that 
+    case, a specific layout for bipartite graphs can be used.
     """
     vertices_nb = 14
     G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)

@@ -40,19 +40,19 @@ b) Or click on *Code - Download ZIP*
 on the project's GitHub page: https://github.com/d-m-3/pds
 
 ## Usage
-- `pds.py` is the main library for finding PDSs, drawing graphs along with their PDSs, and generating random cubic and k-regular bipartite graphs. It can be imported as a module for your project (see *External Usage* below).
+- `pds.py` is the main library for finding PDSs, drawing graphs along with their PDSs, and generating random cubic and k-regular bipartite graphs. It can be imported as a module in your project (see *External Usage* below).
 - `pds_tests.py` contains the unit tests for all the functions in `pds.py`, except for the functions that draw and/or save graphs.
 - `usecase_search_exceptions.py`\
 **Goal:** Search for exceptions, i.e., search for cubic graphs on *n* vertices that do not have a PDS of the maximum size, with *n > 8*.\
 **Execution and details:** It creates random cubic graphs and tests if they do not have a PDS of the maximum size. If such a graph is found, the graph is drawn, it is saved as a .png figure and as an edge list that can be imported later, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_draw_1_pds.py`\
-**Goal:** .\
-**Execution and details:** It creates and draws a random cubic graph on a given number of vertices. It finds a PDS of the maximum size, and its vertices are colored in red. Alternatively, it can create and draw a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
+**Goal:** Draw a graph and show one PDS of the maximum size.\
+**Execution and details:** It creates a random cubic graph on a given number of vertices. It finds a PDS of the maximum size, draws the graph, and colors the vertices of the PDS in red. Alternatively, it can create and draw a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
 - `usecase_draw_all_pds.py`\
-**Goal:** .\
-**Execution and details:** It creates a random cubic graph on a given number of vertices. It finds and draws all its PDSs of the maximum size, and vertices belonging to a PDS are colored in red. Alternatively, it can create a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
+**Goal:** For a given graph, draw all the possible PDSs of the maximum size.\
+**Execution and details:** It creates a random cubic graph on a given number of vertices. It finds all its PDSs of the maximum size and draws all the different PDSs on different figures (vertices belonging to a PDS are colored in red). Alternatively, it can create a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
 - `usecase_every_v_in_pds.py`\
-**Goal:** .\
+**Goal:** Test the conjecture "For any cubic graph G = (V,E) with |V| > 8, every vertex is part of at least one PDS of the maximum size".\
 **Execution and details:** It creates random cubic graphs and tests if, for every graph, every vertex is part of at least one PDS of the maximum size. If the program finds a graph in which there are vertices that are not part of any PDS, the graph is drawn, the vertices that are not part of any PDS are displayed, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_every_v_ds2.py`\
 **Goal:** .\
