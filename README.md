@@ -1,6 +1,6 @@
 # pds
-## Proportionally Dense Subgraphs in k-regular Graphs - Overview
-`pds` is a framework written in Python for generating and drawing random k-regular graphs, computing and showing proportionally dense subgraphs (PDSs) of the maximum size.
+## Proportionally Dense Subgraphs - Overview
+`pds` is a framework written in Python for computing and showing proportionally dense subgraphs (PDSs) of the maximum size. Specifically, cubic and k-regular bipartite graphs can be studied and drawn together with their PDSs. Alternatively, the framework can be used to generate random cubic and k-regular bipartite graphs.
 
 Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579)*.
 
