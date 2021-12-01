@@ -6,6 +6,11 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from itertools import combinations
 
+"""
+Main library for finding PDSs, drawing graphs along with their PDSs, 
+and generating random cubic and k-regular bipartite graphs. 
+It can be imported as a module for your project (see last line of this file).
+"""
 
 def find_one_max_pds(G):
     """
@@ -209,7 +214,7 @@ def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
     """
     Helper method to construct a k-regular bipartite graph G = (X,Y,E).
     Returns an appropriate and partly random vertex v_Y in Y, for the given 
-    vertex v_X in X, such that that the edge V_x--V_y can be added.
+    vertex v_X in X, such that the edge V_x--V_y can be added.
     """
     # List of vertices in Y, sorted by increasing degree.
     incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])
