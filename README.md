@@ -28,7 +28,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ```bash
 python3 get-pip.py
 ```
-4. Install the modules `networkx` and `matplotlib` with pip. In a terminal, type:
+4. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
 ```bash
 pip install networkx
 pip install matplotlib
@@ -38,6 +38,20 @@ a) With `git clone`. In a terminal, type:
 `git clone https://github.com/d-m-3/pds.git`\
 b) Or click on *Code - Download ZIP*
 on the project's GitHub page: https://github.com/d-m-3/pds
+
+### On Windows
+1. To install `pip`, follow the `pip` documentation here: https://pip.pypa.io/en/stable/installation/
+2. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
+```bash
+pip install networkx
+pip install matplotlib
+```
+3. Get the files of the project. Two options:\
+a) With `git clone`. In a terminal, type:
+`git clone https://github.com/d-m-3/pds.git`\
+b) Or click on *Code - Download ZIP*
+on the project's GitHub page: https://github.com/d-m-3/pds
+
 
 ## Usage and Details
 - `pds.py` is the main library for finding PDSs, drawing graphs along with their PDSs, and generating random cubic and k-regular bipartite graphs. It can be imported as a module in your project (see *External Usage* below).
