@@ -312,4 +312,4 @@ def display_progress(count, total):
         print(f"{int(percent)}% done.")
 
 if __name__ == '__main__':
-    print("\nYou can import this module with : \"import pds\"")
+    print("\nYou can import this module with: \"import pds\"")
