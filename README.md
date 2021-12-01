@@ -77,7 +77,7 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 - `usecase_create_nham_graph.py`\
 **Goal:** Generate non-Hamiltonian cubic graphs.\
 **Execution and details:** It creates a non-Hamiltonian cubic graph on a given number of vertices, saves it in the given folder, with the number of vertices at the end of the filename. It also saves the figure in .png in the same directory.
-- `usecase_k_regular_bipartite.py`\
+- `usecase_exceptions_k_regular_bipartite.py`\
 **Goal:** Search for exceptions, i.e., search for k-regular bipartite graphs on *n* vertices that have no PDS of the maximum size, with *n > 8*.\
 **Execution and details:** It creates random k-regular bipartite graphs and tests if they do not have a PDS of the maximum size. If such a graph with no PDS of the maximum size is found, it is drawn and the program's execution is stopped. The number of vertices in a graph, the value of *k*, and the number of created and tested graphs can be defined.
 - `gex.py`. It contains specific graphs used for unit tests and exceptions of cubic graphs on eight vertices, i.e., cubic graphs that do not have a PDS of the maximum size.
