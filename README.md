@@ -15,7 +15,7 @@ sudo apt install python3-pip
 git clone https://github.com/d-m-3/pds.git
 pip install -r requirements.txt
 ```
-### On macOS
+### On MacOS
 1. Check that Python 3 is installed. In a terminal, type:
 ```bash
 python3 --version
