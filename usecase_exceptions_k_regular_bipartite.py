@@ -11,9 +11,9 @@ def main():
     execution is stopped. The number of vertices in a graph, the value of k, 
     and the number of created and tested graphs can be defined.
     """
-    n = 12
-    k = 3
-    graphs_nb = 100
+    n = 22
+    k = 4
+    graphs_nb = 1000
     for i in range(1, graphs_nb + 1):
         BG = pds.get_k_regular_bipartite_graph(n, k)
         max_pds = pds.find_one_max_pds(BG)
