@@ -22,32 +22,54 @@ def pds_cubic_algorithm(G):
     print("T", T)
     print("===")
     
-    for u in list(T):
+    #for u in list(T):
+    while len(T) != 0:
+        u = list(T)[0]
         print("u", u) # Temp test.
         T.remove(u)
         A = set(G.neighbors(u))
         A.difference_update(S_bar) # A \ S_bar
         print("A", A) # Temp test.
         
-        dsnu3 = 0 # Number of neigbhors of u, where d_S(N(u) \ S_bar) < 3.
+        dsnu3 = [] # List of neigbhors of u, where d_S(N(u) \ S_bar) < 3.
         for a in A:
             if pds.deg_subgraph(a, G, S) != 3:
-                dsnu3 += 1
-        if dsnu3 == 0:
+                dsnu3.append(a)
+        if len(dsnu3) == 0:
             S.remove(u)
             S_bar.add(u)
             T.update(set(G.neighbors(u))) # Add neighbors of u in T.
             T.difference_update(S_bar) # T \ S_bar
             T.difference_update(U) # T \ U
-        elif dsnu3 > 1:
+        elif len(dsnu3) > 1:
             U.add(u)
         else: # There exists one neighbor of u, where d_S(N(u) \ S_bar) < 3.
-            # TODO
-            # if len(S) - 2 < max_pds_size and 
-            
-            
-            pass
+            w = dsnu3[0]
+            print("w", w) # Temp test.
+            B = set(G.neighbors(w))
+            B.difference_update(S_bar)
+            B.remove(u)
+            dsnu3b = 0
+            for b in B:
+                if pds.deg_subgraph(b, G, S) != 3:
+                    dsnu3b += 1
+            T.remove(w)
+            if len(S) - 2 >= max_pds_size and dsnu3b == 0:
+                S.remove(u)
+                S.remove(w)
+                S.add(u)
+                S.add(w)
+                T.update(set(G.neighbors(u))) # Add neighbors of u in T.
+                T.update(set(G.neighbors(w))) # Add neighbors of w in T.
+                T.difference_update(S_bar) # T \ S_bar
+                T.difference_update(U) # T \ U
+            else:
+                U.add(u)
+                U.add(w)
+                
+        print("set U", U) # Temp test.
         if len(S) == max_pds_size:
+            print("return list(S)", list(S))
             return list(S) # Returns a list containing a PDS of the max. size.
         if len(U) > max_pds_size:
             return [] # If no PDS of the max. size, returns an empty.
@@ -63,7 +85,7 @@ def pds_cubic_algorithm(G):
     print("S:", S)
     print("S_bar:", S_bar)
     print("T", T)
-    return S
+    return list(S)
 
 def main():
     # Test
