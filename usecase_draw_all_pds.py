@@ -1,4 +1,5 @@
 import pds
+import gex
 
 
 def main():
@@ -11,11 +12,13 @@ def main():
     graph instead of a cubic graph. In that case, a specific layout for 
     bipartite graphs can be used.
     """
-    vertices_nb = 14
-    G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
-    #k = 3
-    #G = pds.get_k_regular_bipartite_graph(vertices_nb, k)
-    pds.draw_all_max_pds(G, bipartite_layout=False)
+    vertices_nb = 18
+    #G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
+    #G = gex.G_algorithm1_failure_14()
+    k = 3
+    G = pds.get_k_regular_bipartite_graph(vertices_nb, k)
+    pds.draw_graph(G, [], bipartite_layout=True)
+    pds.draw_all_max_pds(G, bipartite_layout=True)
 
 if __name__ == '__main__':
     main()

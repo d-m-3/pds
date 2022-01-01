@@ -175,7 +175,7 @@ def hamiltonian_cycle(G):
 def get_connected_cubic_graph(vertices_nb, only_nh=False):
     """
     Returns a random connected cubic graph, with |V| = vertices_nb, 
-    and that is non-Hamiltonian if "only_nh" is True.
+    that is non-Hamiltonian if "only_nh" is True.
     """
     if only_nh:
         G = nx.random_regular_graph(3, vertices_nb, seed=None)

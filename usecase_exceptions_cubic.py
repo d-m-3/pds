@@ -14,7 +14,7 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
     cubic graphs that do not have a Hamiltonian cycle are considered 
     (please notice that it takes much longer).
     """
-    print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and checking"
+    print(f"\nCreating {graphs_nb} graphs on {vertices_nb} vertices and checking"
           " \nfor graphs that have not a PDS of the maximum size. Please wait...")
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
@@ -29,8 +29,8 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
         pds.display_progress(i, graphs_nb)
 
 def main():
-    vertices_nb = 14
-    graphs_nb = 1000
+    vertices_nb = 18
+    graphs_nb = 10000
     file = pds.next_valid_filepath("EXCEPTION-%s")
     create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=True)
 

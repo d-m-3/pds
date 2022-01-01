@@ -46,8 +46,8 @@ def Gex2():
 
 def G_two_K4():
     """
-    Returns a graph of 8 vertices, composed of two unconnected K_4, i.e.,
-    complete graphs of 4 vertices.
+    Returns a graph on 8 vertices, composed of two unconnected K_4, i.e.,
+    complete graphs on 4 vertices.
     """
     G_two_K4 = nx.Graph()
     G_two_K4.add_edge(1,2)
@@ -66,7 +66,7 @@ def G_two_K4():
 
 def G_test_6():
     """
-    Returns a cubic graph of 6 vertices, used for unit tests.
+    Returns a cubic graph on 6 vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 1)
@@ -82,7 +82,7 @@ def G_test_6():
 
 def G_test_10():
     """
-    Returns a cubic graph of 10 vertices, used for unit tests.
+    Returns a cubic graph on 10 vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 4)
@@ -104,7 +104,7 @@ def G_test_10():
 
 def G_test_10_2ds3():
     """
-    Returns a cubic graph of 10 vertices, used for unit tests.
+    Returns a cubic graph on 10 vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 1)
@@ -126,7 +126,7 @@ def G_test_10_2ds3():
 
 def G_bipartite_10():
     """
-    Returns a cubic bipartite graph of 1o vertices, used for unit tests.
+    Returns a cubic bipartite graph on 1o vertices, used for unit tests.
     """
     G = nx.Graph()
     G.add_edge(0, 1)
@@ -148,7 +148,7 @@ def G_bipartite_10():
 
 def G_test_12():
     """
-    Returns a cubic graph of 12 vertices.
+    Returns a cubic graph on 12 vertices.
     """
     G = nx.Graph()
     G.add_edge(0, 3)
@@ -170,4 +170,32 @@ def G_test_12():
     G.add_edge(8, 10)
     G.add_edge(9, 10)
     return G
-               
+
+def G_algorithm1_failure_14():
+    """
+    Returns a cubic graph on 14 vertices, for which algorithm 1 does not
+    return a PDS of the maximum size, starting with vertex 3.
+    """
+    G = nx.Graph()
+    G.add_edge(0, 7)
+    G.add_edge(0, 8)
+    G.add_edge(0, 12)
+    G.add_edge(1, 6)
+    G.add_edge(1, 7)
+    G.add_edge(1, 9)
+    G.add_edge(2, 3)
+    G.add_edge(2, 10)
+    G.add_edge(2, 12)
+    G.add_edge(3, 4)
+    G.add_edge(3, 5)
+    G.add_edge(4, 6)
+    G.add_edge(4, 11)
+    G.add_edge(5, 11)
+    G.add_edge(5, 13)
+    G.add_edge(6, 11)
+    G.add_edge(7, 13)
+    G.add_edge(8, 9)
+    G.add_edge(8, 10)
+    G.add_edge(9, 13)
+    G.add_edge(10, 12)
+    return G
