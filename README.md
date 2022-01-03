@@ -78,8 +78,8 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 **Goal:** Test the conjecture "Every cubic graph *G = (V, E)*, with *|V| > 8*, has at least one PDS *S* of the maximum size, where *d_S(u) = d_S(v) = 3* for at most two vertices *u, v* in *S*".\
 **Execution and details:** It creates random cubic graphs and tests if, for every graph, there exists a PDS of the maximum size and *d_s(v) = 2* for every vertex *v*, except for at most `ds3_nb` vertices, where *d_s(v) = 3*. If there is no such PDS for a graph, the graph and all the PDSs of the maximum size are drawn, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_create_nham_graph.py`\
-**Goal:** Generate non-Hamiltonian cubic graphs.\
-**Execution and details:** It creates a non-Hamiltonian cubic graph on a given number of vertices, saves it in the given folder, with the number of vertices at the end of the filename. It also saves the figure in .png in the same directory.
+**Goal:** Generate, display and save random non-Hamiltonian cubic graphs on a given number of vertices.\
+**Execution and details:** It creates a random non-Hamiltonian cubic graph on a given number of vertices, saves it in the given folder, with the number of vertices at the end of the filename. It also saves the figure in .png format in the same directory.
 - `gex.py`. It contains specific graphs used for unit tests and exceptions of cubic graphs on eight vertices, i.e., cubic graphs that do not have a PDS of the maximum size.
 
 
