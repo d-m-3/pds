@@ -7,9 +7,10 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 
 """
-Main library for finding PDSs, drawing graphs along with their PDSs, 
-and generating random cubic and k-regular bipartite graphs. 
-It can be imported as a module for your project (see last line of this file).
+Main library for finding PDSs in cubic and k-regular bipartite graphs, 
+drawing these graphs and highlighting their PDSs, and generating cubic 
+and k-regular bipartite graphs randomly. It can be imported as a module 
+for your project by using "import pds".
 """
 
 def find_one_max_pds(G):
