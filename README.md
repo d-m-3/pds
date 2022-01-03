@@ -57,13 +57,13 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 - `pds.py` is the main library for finding PDSs, drawing graphs along with their PDSs, and generating random cubic and k-regular bipartite graphs. It can be imported as a module in your project (see *External Usage* below).
 - `pds_tests.py` contains the unit tests for all the functions in `pds.py`, except for the functions that draw and/or save graphs.
 - `usecase_draw_1_pds.py`\
-**Goal:** Draw a graph and show one PDS of the maximum size.\
+**Goal:** Draw a cubic or k-regular bipartite graph and show one PDS of the maximum size.\
 **Execution and details:** It creates a random cubic graph on a given number of vertices. It finds a PDS of the maximum size, draws the graph, and colors the vertices of the PDS in red. Alternatively, it can create and draw a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
 - `usecase_draw_all_pds.py`\
-**Goal:** For a given graph, draw all the possible PDSs of the maximum size.\
+**Goal:** Draw all the possible PDSs of the maximum size for a given cubic or k-regular bipartite graph.\
 **Execution and details:** It creates a random cubic graph on a given number of vertices. It finds all its PDSs of the maximum size and draws all the different PDSs on different figures (vertices belonging to a PDS are colored in red). Alternatively, it can create a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
 - `usecase_exceptions_cubic.py`\
-**Goal:** Search for exceptions, i.e., search for cubic graphs on *|V|* vertices that have no PDS of the maximum size, with *|V| > 8*.\
+**Goal:** Search for exceptions, i.e., search for cubic graphs on *|V|* vertices, with *|V| > 8*, that have no PDS of the maximum size.\
 **Execution and details:** It creates random cubic graphs and tests if they do not have a PDS of the maximum size. If such a graph with no PDS of the maximum size is found, it is drawn, saved as a .png figure and as an edge list that can be imported later, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_exceptions_k_regular_bipartite.py`\
 **Goal:** Search for exceptions, i.e., search for k-regular bipartite graphs on *|V|* vertices that have no PDS of the maximum size, with *|V| > 8*.\
