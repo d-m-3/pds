@@ -113,7 +113,7 @@ def get_nodes_not_part_of_pds(G):
 def get_pds_every_v_ds2(G):
     """
     Returns a list containing one PDS of the maximum size, where for every
-    vertex v, d_s(v) = 2, in 3-regular (cubic) graphs. 
+    vertex v, d_S(v) = 2, in 3-regular (cubic) graphs. 
     The PDS may not be connected.
     """
     all_max_pds = get_all_max_pds(G)
@@ -130,7 +130,7 @@ def get_pds_every_v_ds2(G):
 def get_pds_every_v_ds2_and_ds3(G, ds3_nb):
     """
     Returns a list containing one PDS of the maximum size, where for every
-    vertex v, d_s(v) = 2, except for at most "ds3_nb", where d_s(v) = 3,
+    vertex v, d_S(v) = 2, except for at most "ds3_nb", where d_s(v) = 3,
     in 3-regular (cubic) graphs. The PDS may not be connected.
     """
     all_max_pds = get_all_max_pds(G)
