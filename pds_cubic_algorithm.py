@@ -15,7 +15,7 @@ def pds_cubic_algorithm(G):
     T.update(set(G.neighbors(v))) # Add neighbors of v in T.
     max_pds_size = pds.pds_size(G.number_of_nodes(), 3)
     
-    # Temporary tests. To be deleted.
+    # Runtime outputs.
     print("S:", S)
     print("S_bar:", S_bar)
     print("v:", v)
@@ -25,7 +25,7 @@ def pds_cubic_algorithm(G):
     #for u in list(T):
     while len(T) != 0:
         u = list(T)[0]
-        print("u", u) # Temp test.
+        print("u", u) # Runtime output.
         T.discard(u)
         A = set(G.neighbors(u))
         A.difference_update(S_bar) # A \ S_bar
@@ -45,17 +45,17 @@ def pds_cubic_algorithm(G):
             U.add(u)
         else: # There exists one neighbor of u, where d_S(N(u) \ S_bar) < 3.
             w = dsnu3[0]
-            print("w", w) # Temp test.
+            print("w", w) # Runtime output.
             B = set(G.neighbors(w))
             B.difference_update(S_bar)
-            print("B", B) # Temp test.
+            print("B", B) # Runtime output.
             dsnu3b = 0
             for b in B:
                 if pds.deg_subgraph(b, G, S) != 3:
                     dsnu3b += 1
             T.discard(w)
             if len(S) - 2 >= max_pds_size and dsnu3b == 0:
-                print("Both added.") # Temp test
+                print("Both added.") # Runtime output.
                 S.discard(u)
                 S.discard(w)
                 S_bar.add(u)
@@ -65,14 +65,14 @@ def pds_cubic_algorithm(G):
                 T.difference_update(S_bar) # T \ S_bar
                 T.difference_update(U) # T \ U
             else:
-                print("Both discarded.") # Temp test
+                print("Both discarded.") # Runtime output.
                 U.add(u)
                 U.add(w)
                 
-        print("set U", U) # Temp test.
+        print("set U", U) # Runtime output.
         if len(S) == max_pds_size:
-            print("return list(S)", list(S))
-            print("S_bar", S_bar)
+            print("return list(S)", list(S)) # Runtime output.
+            print("S_bar", S_bar) # Runtime output.
             return list(S) # Returns a list containing a PDS of the max. size.
         if len(U) > max_pds_size:
             return [] # If no PDS of the max. size, returns an empty.
@@ -81,10 +81,10 @@ def pds_cubic_algorithm(G):
             C.difference_update(S_bar)
             C.difference_update(U)
             v = list(C)[0]
-            print("set U", U) # Temp test.
+            print("set U", U) # Runtime output.
             T.add(v)
             
-    # Temporary tests. To be deleted.
+    # Runtime outputs.
     print("===")
     print("S:", S)
     print("S_bar:", S_bar)
@@ -93,19 +93,11 @@ def pds_cubic_algorithm(G):
 
 def main():
     # Test
-    G = pds.get_connected_cubic_graph(14)
+    nb_vertices = 14
+    G = pds.get_connected_cubic_graph(nb_vertices)
     max_pds = pds_cubic_algorithm(G)
     print("Is it a PDS?", pds.is_subgraph_a_pds(G, max_pds))
     pds.draw_graph(G, max_pds)
     
 if __name__ == '__main__':
     main()
-    
-  
-    
-# ====
-# Probably do not use! Increase complexity for little value.
-def _nb_neighbors_dsnvertex3(G, vertex, S_bar):
-    _set = set(G.neighbors(vertex))
-    _set.difference_update(S_bar) # A \ S_bar
-    dsn3 = 0 # Number of neigbhors of u, where d_S(N(u) \ S_bar) < 3.
