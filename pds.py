@@ -7,15 +7,15 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 
 """
-Main library for finding PDSs in cubic and k-regular bipartite graphs, 
-drawing these graphs and highlighting their PDSs, and generating cubic 
+Main library for finding PDSs in cubic graphs and k-regular bipartite graphs, 
+drawing these graphs and highlighting their PDSs, and generating cubic graphs 
 and k-regular bipartite graphs randomly. It can be imported as a module 
 for your project by using "import pds".
 """
 
 def find_one_max_pds(G):
     """
-    Returns a list containing one PDS of the maximum size. The PDS may not
+    Returns a list containing one PDS of maximum size. The PDS may not
     be connected.
     """
     combs = get_combinations_of_subsets(G)
@@ -23,11 +23,11 @@ def find_one_max_pds(G):
     for subset in combs:
         if is_subgraph_a_pds(G, list(subset)):
             return list(subset)
-    return [] # Returns an empty list if no PDS of the max. size could be found.
+    return [] # Returns an empty list if no PDS of max size could be found.
 
 def get_all_max_pds(G):
     """
-    Returns a list containing all lists of PDSs of the maximum size. The PDSs
+    Returns a list containing all lists of PDSs of maximum size. The PDSs
     may not be connected.
     """
     combs = get_combinations_of_subsets(G)
@@ -47,7 +47,7 @@ def get_combinations_of_subsets(G):
 
 def pds_size(vertices_nb, k):
     """
-    Returns the maximum possible size of a PDS, according to the number of 
+    Returns maximum possible size of a PDS, according to the number of 
     vertices, in k-regular graphs.
     """
     return math.floor(((vertices_nb * (k - 1)) + 1)/ k)
@@ -63,7 +63,7 @@ def is_subgraph_a_pds(G, subgraph):
 
 def is_vertex_satisfied_in_subgraph(vertex, G, subgraph):
     """
-    Returns True if the given vertex is satisfied in the subgraph, i.e.,
+    Returns True if the given vertex is satisfied in the subgraph, i.e.
     the vertex satisfies the conditions to be considered in the subgraph, 
     so that the subgraph is a PDS.
     """
@@ -79,7 +79,7 @@ def deg_subgraph(vertex, G, subgraph):
 
 def is_pds_max(G, max_pds, vertices_nb):
     """
-    Returns True if the given PDS is of the maximum size. Otherwise, 
+    Returns True if the given PDS is of maximum size. Otherwise, 
     returns False. For cubic graphs of eight vertices, three graph exceptions 
     are not considered.
     """
@@ -89,7 +89,7 @@ def is_pds_max(G, max_pds, vertices_nb):
         if vertices_nb != 8:
             return False
         else:
-            # Check for isomophism with the three graph exceptions, if |V|=8.
+            # Check for isomophism with the three graph exceptions if |V|=8.
             if not nx.is_isomorphic(G, gex.Gex1()) and not nx.is_isomorphic(G, 
             gex.Gex2()) and not nx.is_isomorphic(G, gex.G_two_K4()):
                 return False
@@ -98,13 +98,13 @@ def is_pds_max(G, max_pds, vertices_nb):
             
 def get_nodes_not_part_of_pds(G):
     """
-    Returns a list of vertices that are not part of at least one PDS of the
+    Returns a list of vertices that are not part of at least one PDS of
     maximum size.
     """
     all_pds = get_all_max_pds(G)
     nodes_not_part_of_pds = []
     for vertex in G.nodes():
-        # If a vertex is not found in any PDS of the maximum size,
+        # If a vertex is not found in any PDS of maximum size,
         # append it to the list to be returned.
         if not (vertex in (item for sublist in all_pds for item in sublist)):
             nodes_not_part_of_pds.append(vertex)
@@ -112,7 +112,7 @@ def get_nodes_not_part_of_pds(G):
 
 def get_pds_every_v_ds2(G):
     """
-    Returns a list containing one PDS of the maximum size, where for every
+    Returns a list containing one PDS of maximum size, where for every
     vertex v, d_S(v) = 2, in 3-regular (cubic) graphs. 
     The PDS may not be connected.
     """
@@ -129,9 +129,9 @@ def get_pds_every_v_ds2(G):
 
 def get_pds_every_v_ds2_and_ds3(G, ds3_nb):
     """
-    Returns a list containing one PDS of the maximum size, where for every
-    vertex v, d_S(v) = 2, except for at most "ds3_nb", where d_s(v) = 3,
-    in 3-regular (cubic) graphs. The PDS may not be connected.
+    Returns a list containing one PDS of maximum size where d_S(v) = 2 for 
+    every vertex v, except for at most "ds3_nb" where d_s(v) = 3,
+    in cubic graphs. The PDS may be disconnected.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
@@ -175,7 +175,7 @@ def hamiltonian_cycle(G):
 
 def get_connected_cubic_graph(vertices_nb, only_nh=False):
     """
-    Returns a random connected cubic graph, with |V| = vertices_nb, 
+    Returns a random connected cubic graph with |V| = vertices_nb, 
     that is non-Hamiltonian if "only_nh" is True.
     """
     if only_nh:
@@ -214,7 +214,7 @@ def get_k_regular_bipartite_graph(vertices_nb, k):
 def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
     """
     Helper method to construct a k-regular bipartite graph G = (X,Y,E).
-    Returns an appropriate and partly random vertex v_Y in Y, for the given 
+    Returns an appropriate and partly random vertex v_Y in Y for the given 
     vertex v_X in X, such that the edge V_x--V_y can be added.
     """
     # List of vertices in Y, sorted by increasing degree.
@@ -240,8 +240,8 @@ def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
     
 def draw_graph(G, max_pds, bipartite_layout=False):
     """
-    Draws the graph and highlights the vertices that belong to
-    a PDS of the maximum size, in red. Returns the drawn graph.
+    Draws the graph and highlights in red the vertices that belong to
+    a PDS of maximum size and returns the drawn graph.
     By default, ciruclar layout is used. 
     Bipartite layout can be used as an option.
     """
@@ -263,7 +263,7 @@ def draw_graph(G, max_pds, bipartite_layout=False):
 
 def draw_all_max_pds(G, bipartite_layout=False):
     """
-    Draws all the PDSs of the maximum size, for the given graph G.
+    Draws all the PDSs of maximum size for the given graph G.
     By default, ciruclar layout is used. 
     Bipartite layout can be used as an option.
     """
@@ -273,15 +273,15 @@ def draw_all_max_pds(G, bipartite_layout=False):
         
 def save_graph(G, filepath):
     """
-    Saves the graph, as an edge list, that can be imported later, in the 
+    Saves the graph as an edge list that can be imported later, to the 
     given filepath (path/to/file). The file extension is added automatically.
     """
     nx.write_edgelist(G, f"{filepath}.gz", data=False)
 
 def save_graph_and_figure(G, figure, filepath):
     """
-    Saves the graph (as an edge list, that can be imported), and saves the
-    figure of the graph, in the given filepath (path/to/file).
+    Saves the graph as an edge list that can be imported and saves the
+    figure of the graph to the given filepath (path/to/file).
     The file extensions are added automatically.
     """
     figure.savefig(f"{filepath}.png")
@@ -289,9 +289,8 @@ def save_graph_and_figure(G, figure, filepath):
     
 def next_valid_filepath(pattern):
     """
-    Gives the next valid filename, according to the pattern. E.g., if the 
-    pattern is "sample-" and the file "sample-1.png" exists, it returns
-    "sample-2".
+    Gives the next valid filename according to the pattern, e.g. returns
+    "sample-2" if the pattern is "sample-" and the file "sample-1.png" exists.
     """
     i = 1
     while os.path.exists((pattern % i) + ".png"):
@@ -300,13 +299,13 @@ def next_valid_filepath(pattern):
     
 def get_graph_from_file(filepath):
     """
-    Returns the graph from "filepath", e.g., "to/graph.gz".
+    Returns the graph from "filepath".
     """
     return nx.read_edgelist(filepath, nodetype=int)
     
 def display_progress(count, total):
     """
-    Displays progress in the console, for every 10% done.
+    Displays progress in the console by 10% increments.
     """
     percent = round(100.0 * count / float(total), 1)
     if percent % 10 == 0:

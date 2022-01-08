@@ -12,9 +12,9 @@ def main():
     vertices_nb = 10
     G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
     k = 3
-    #G = pds.get_k_regular_bipartite_graph(vertices_nb, k)
+    G = pds.get_k_regular_bipartite_graph(vertices_nb, k)
     max_pds = pds.find_one_max_pds(G)
-    pds.draw_graph(G, max_pds, bipartite_layout=False)
+    pds.draw_graph(G, max_pds, bipartite_layout=True)
 
 if __name__ == '__main__':
     main()
