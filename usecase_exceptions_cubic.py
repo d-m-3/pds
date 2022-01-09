@@ -3,8 +3,8 @@ import pds
     
 def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
     """
-    Goal: Search for exceptions, i.e., search for cubic graphs on n vertices 
-    that have no PDS of maximum size, with n > 8.
+    Goal: Search for exceptions, i.e., search for cubic graphs on |V| vertices 
+    that have no PDS of maximum size, with |V| > 8.
     Execution and details: It creates random cubic graphs and tests if they 
     do not have a PDS of maximum size. If such a graph with no PDS of the 
     maximum size is found, it is drawn, saved as a .png figure and as an edge 
