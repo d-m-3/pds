@@ -3,10 +3,10 @@ import pds
 def check_every_v_ds2_ds3(vertices_nb, graphs_nb, ds3_nb, only_nh):
     """
     Goal: Test the conjecture "Every cubic graph G = (V, E), with |V| > 8, 
-    has at least one PDS S of the maximum size, where d_S(u) = d_S(v) = 3 for 
+    has at least one PDS S of maximum size, where d_S(u) = d_S(v) = 3 for 
     at most two vertices u, v in S".
     Execution and details: It creates random cubic graphs and tests if, 
-    for every graph, there exists a PDS of the maximum size and d_s(v) = 2 
+    for every graph, there exists a PDS of maximum size and d_s(v) = 2 
     for every vertex v, except for at most `ds3_nb` vertices, where d_s(v) = 3.
     If there is no such PDS for a graph, the graph and all the PDSs of the 
     maximum size are drawn, and the program's execution is stopped. The number 
@@ -29,7 +29,7 @@ def check_every_v_ds2_ds3(vertices_nb, graphs_nb, ds3_nb, only_nh):
             print("\nException: This graph has no PDS where, "
                   f"for every vertex v, d_s(v) = 2, and for at most {ds3_nb} "
                   "node(s), d_s(v) = 3.")
-            # Draw all the PDSs of the maximum size, for this graph.
+            # Draw all the PDSs of maximum size, for this graph.
             pds.draw_all_max_pds(G)
             break
         pds.display_progress(i, graphs_nb)

@@ -4,7 +4,7 @@ import pds
 def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
     It creates random cubic graphs and tests if, for every graph, every vertex
-    is part of at least one PDS of the maximum size. If the program finds a 
+    is part of at least one PDS of maximum size. If the program finds a 
     graph in which there are vertices that are not part of any PDS, the graph 
     is drawn, the vertices that are not part of any PDS are displayed, and 
     the program's execution is stopped. The number of vertices in a graph and 
@@ -14,7 +14,7 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and"
           " checking if \nevery vertex of the graph is part of at least one"
-          " PDS of the maximum size. \nPlease wait...")
+          " PDS of maximum size. \nPlease wait...")
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         nodes_not_in_pds = pds.get_nodes_not_part_of_pds(G)

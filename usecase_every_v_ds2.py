@@ -3,13 +3,13 @@ import pds
 def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
     """
     Goal: Test the conjecture "Every cubic graph G = (V, E), with |V| > 8, 
-    has at least one PDS S of the maximum size, where d_S(u) = 2 for every 
+    has at least one PDS S of maximum size, where d_S(u) = 2 for every 
     vertex u in V". This conjecture was proven to be wrong by the finding 
     of counterexamples.
     Execution and details: It creates random cubic graphs and tests if, 
-    for every graph, there exists a PDS of the maximum size and d_s(v) = 2 
+    for every graph, there exists a PDS of maximum size and d_s(v) = 2 
     for every vertex v. If there is no such PDS for a graph, the graph and 
-    all the PDSs of the maximum size are drawn, and the program's execution is 
+    all the PDSs of maximum size are drawn, and the program's execution is 
     stopped. The number of vertices in a graph and the number of created and 
     tested graphs can be defined. If the boolean "only_nh" is set to "True", 
     only cubic graphs that do not have a Hamiltonian cycle are considered 
@@ -27,7 +27,7 @@ def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
             pds.draw_graph(G, [])
             print("\nException: This graph has no PDS where d_s(v) = 2, "
                   "for every vertex v.")
-            # Draw all the PDSs of the maximum size, for this graph.
+            # Draw all the PDSs of maximum size, for this graph.
             pds.draw_all_max_pds(G)
             break
         pds.display_progress(i, graphs_nb)

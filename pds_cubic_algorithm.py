@@ -2,7 +2,7 @@ import pds
 
 def pds_cubic_algorithm(G):
     """
-    Returns a PDS of the maximum size, in cubic graphs. 
+    Returns a PDS of maximum size, in cubic graphs. 
     Algorithm 1, from November 2021 (see master thesis report).
     """
     S = set(G.nodes())
