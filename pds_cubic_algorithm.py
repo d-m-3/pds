@@ -3,7 +3,7 @@ import pds
 def pds_cubic_algorithm(G):
     """
     Returns a PDS of maximum size, in cubic graphs. 
-    Algorithm 1, from November 2021 (see master thesis report).
+    Algorithm 1, December 2021 (see master thesis report).
     """
     S = set(G.nodes())
     S_bar = set() # Empty set.
@@ -92,10 +92,11 @@ def pds_cubic_algorithm(G):
     return list(S)
 
 def main():
-    # Test
+    # Test.
     nb_vertices = 14
     G = pds.get_connected_cubic_graph(nb_vertices)
     max_pds = pds_cubic_algorithm(G)
+    # Check that it is a PDS.
     print("Is it a PDS?", pds.is_subgraph_a_pds(G, max_pds))
     pds.draw_graph(G, max_pds)
     
