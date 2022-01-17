@@ -19,11 +19,11 @@ def main():
         max_pds = pds.find_one_max_pds(BG)
         if len(max_pds) == 0:
             print("Exception")
-            pds.draw_graph(BG, max_pds, bipartite_layout=True)
+            pds.draw_graph(BG, max_pds, layout="bipartite")
             break
         # If no exception could be found, draw the last graph with its PDS.
         pds.display_progress(i, graphs_nb)
-    pds.draw_graph(BG, max_pds, bipartite_layout=True)
+    pds.draw_graph(BG, max_pds, layout="bipartite")
     
     
 if __name__ == '__main__':

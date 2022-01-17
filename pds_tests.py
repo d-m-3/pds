@@ -24,6 +24,19 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
         self.assertEqual(pds.get_all_max_pds(G), [[0, 1, 4, 5], [0, 2, 3, 5], 
                                                   [1, 2, 3, 4]])
     
+    def test_max_degree(self):
+        """
+        Tests the function `get_max_degree`.
+        """
+        G = gex.G_test_6()
+        self.assertEqual(pds.max_degree(G), 3)
+        G = pds.get_k_regular_bipartite_graph(12, 4)
+        self.assertEqual(pds.max_degree(G), 4)
+        G = nx.path_graph(5) # Path graph P_5
+        self.assertEqual(pds.max_degree(G), 2)
+        G = nx.star_graph(18) # Star graph K_1,18
+        self.assertEqual(pds.max_degree(G), 18)
+    
     def test_get_combinations_of_subsets(self):
         """
         Tests the function `get_combinations_of_subsets`.

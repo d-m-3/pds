@@ -37,20 +37,26 @@ def get_all_max_pds(G):
             all_pds.append(list(subset))
     return all_pds
 
+def max_degree(G):
+    '''
+    Returns the maximum degree of the graph G.
+    '''
+    return max(G.degree, key=lambda x: x[1])[1]
+
 def get_combinations_of_subsets(G):
     """
     Returns a list of all possible combinations of subsets S_i (as lists) 
     of vertices, where |S_i| = maximum size of a PDS.
     """
     return list(combinations(range(G.number_of_nodes()), 
-                             pds_size(G.number_of_nodes(), G.degree[0])))
+                             pds_size(G.number_of_nodes(), max_degree(G))))
 
-def pds_size(vertices_nb, k):
+def pds_size(vertices_nb, max_degree):
     """
     Returns maximum possible size of a PDS, according to the number of 
-    vertices, in k-regular graphs.
+    vertices and the maximum degree.
     """
-    return math.floor(((vertices_nb * (k - 1)) + 1)/ k)
+    return math.floor(((vertices_nb * (max_degree - 1)) + 1)/ max_degree)
 
 def is_subgraph_a_pds(G, subgraph):
     """
@@ -238,17 +244,19 @@ def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
             v_Y = random.choice(incr_deg_Y)[0]
     return v_Y
     
-def draw_graph(G, max_pds, bipartite_layout=False):
+def draw_graph(G, max_pds, layout="circular"):
     """
     Draws the graph and highlights in red the vertices that belong to
     a PDS of maximum size and returns the drawn graph.
     By default, ciruclar layout is used. 
     Bipartite layout can be used as an option.
     """
-    if bipartite_layout:
+    if layout == "bipartite":
         X = nx.algorithms.bipartite.sets(G)[0]
         pos = nx.drawing.layout.bipartite_layout(G, X)
-    else:
+    elif layout == "spring":
+        pos = nx.spring_layout(G)
+    else: # Circular.
         pos = nx.circular_layout(G)
     color_dict = {}
     for vertex in max_pds:
@@ -261,7 +269,7 @@ def draw_graph(G, max_pds, bipartite_layout=False):
     plt.show()
     return figure
 
-def draw_all_max_pds(G, bipartite_layout=False):
+def draw_all_max_pds(G, layout="circular"):
     """
     Draws all the PDSs of maximum size for the given graph G.
     By default, ciruclar layout is used. 
@@ -269,7 +277,7 @@ def draw_all_max_pds(G, bipartite_layout=False):
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
-        draw_graph(G, a_pds, bipartite_layout)
+        draw_graph(G, a_pds, layout)
         
 def save_graph(G, filepath):
     """

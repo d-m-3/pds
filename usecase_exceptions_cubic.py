@@ -30,7 +30,7 @@ def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
 
 def main():
     vertices_nb = 18
-    graphs_nb = 10000
+    graphs_nb = 10
     file = pds.next_valid_filepath("EXCEPTION-%s")
     create_graphs_and_check(vertices_nb, graphs_nb, file, only_nh=True)
 
