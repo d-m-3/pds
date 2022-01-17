@@ -23,8 +23,12 @@ pds.draw_graph(T, max_pds)
 # Caterpillar graph
 C = create_random_caterpillar(6, 0.42)
 max_pds = pds.find_one_max_pds(C)
-print(f"max_pds: {max_pds}")
+max_pds_size = pds.pds_size(len(C.nodes()), pds.max_degree(C))
+nb_vertices = len(C.nodes())
+print(f"|V| = {nb_vertices}")
+print(f"max pds size = {max_pds_size}")
+print(f"max pds: {max_pds}")
 pds.draw_graph(C, max_pds, layout="spring")
-print(pds.max_degree(C))
+
 
 #pds.draw_all_max_pds(G)
