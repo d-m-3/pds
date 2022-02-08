@@ -249,7 +249,7 @@ def draw_graph(G, max_pds, layout="circular"):
     Draws the graph and highlights in red the vertices that belong to
     a PDS of maximum size and returns the drawn graph.
     By default, ciruclar layout is used. 
-    Bipartite layout can be used as an option.
+    Bipartite and spring layouts can be used as an option.
     """
     if layout == "bipartite":
         X = nx.algorithms.bipartite.sets(G)[0]
