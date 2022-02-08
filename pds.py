@@ -273,7 +273,7 @@ def draw_all_max_pds(G, layout="circular"):
     """
     Draws all the PDSs of maximum size for the given graph G.
     By default, ciruclar layout is used. 
-    Bipartite layout can be used as an option.
+    Bipartite and spring layouts can be used as an option.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
