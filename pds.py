@@ -221,7 +221,7 @@ def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
     """
     Helper method to construct a k-regular bipartite graph G = (X,Y,E).
     Returns an appropriate and partly random vertex v_Y in Y for the given 
-    vertex v_X in X, such that the edge V_x--V_y can be added.
+    vertex v_X in X, such that the edge v_X--v_Y can be added.
     """
     # List of vertices in Y, sorted by increasing degree.
     incr_deg_Y = sorted(G.degree(Y), key=lambda x: x[1])

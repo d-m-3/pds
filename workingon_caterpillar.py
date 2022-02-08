@@ -30,5 +30,11 @@ print(f"max pds size = {max_pds_size}")
 print(f"max pds: {max_pds}")
 pds.draw_graph(C, max_pds, layout="spring")
 
+'''
+G = nx.generators.random_graphs.fast_gnp_random_graph(12, 0.2)
+max_pds = pds.find_one_max_pds(G)
+pds.draw_graph(G, max_pds, layout="spring")
+'''
+
 
 #pds.draw_all_max_pds(G)
