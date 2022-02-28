@@ -1,14 +1,14 @@
 import networkx as nx
 
 """
-It contains specific graphs used for unit tests and exceptions of cubic 
-graphs on eight vertices, i.e., cubic graphs that do not have a PDS of the 
-maximum size.
+This file contains exception graphs, specific graphs used for unit tests,
+and graphs that have a particularity.
 """
 
 def Gex1():
     """
-    Returns Graph exception 1 from paper.
+    Returns graph exception 1 from PDS paper, i.e. a cubic graph that does 
+    not have a PDS of the maximum size.
     """
     Gexception1 = nx.Graph()
     Gexception1.add_edge(1,2)
@@ -27,7 +27,8 @@ def Gex1():
 
 def Gex2():
     """
-    Returns graph exception 1 from paper.
+    Returns graph exception 2 from PDS paper, i.e. a cubic graph that does
+    not have a PDS of the maximum size.
     """
     Gexception2 = nx.Graph()
     Gexception2.add_edge(1,2)
