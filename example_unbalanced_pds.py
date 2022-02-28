@@ -3,7 +3,7 @@ import gex
 
 def main():
 
-    G = gex.G_cubic_bipartite_unbalanced_PDS()
+    G = gex.G_cubic_bipartite_unbalanced_pds()
     subgraph = [0, 1, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17]
     is_sub_a_pds = pds.is_subgraph_a_pds(G, subgraph)
     print("Is subgraph", subgraph, "a PDS?", is_sub_a_pds)

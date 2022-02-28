@@ -200,7 +200,7 @@ def G_algorithm1_failure_14():
     G.add_edge(10, 12)
     return G
 
-def G_cubic_bipartite_unbalanced_PDS():
+def G_cubic_bipartite_unbalanced_pds():
     G = nx.Graph()
     G.add_edge(0, 9)
     G.add_edge(0, 10)
