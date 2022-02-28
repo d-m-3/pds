@@ -1,5 +1,4 @@
 import pds
-import gex
 
 
 def main():
@@ -12,9 +11,9 @@ def main():
     graph instead of a cubic graph. In that case, a specific layout for 
     bipartite graphs can be used.
     """
-    vertices_nb = 10
+    vertices_nb = 12
     G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
-    pds.draw_graph(G, [])
+    #pds.draw_graph(G, [])
     pds.draw_all_max_pds(G)
     #G = gex.G_algorithm1_failure_14()
     '''

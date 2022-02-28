@@ -48,7 +48,7 @@ def get_combinations_of_subsets(G):
     Returns a list of all possible combinations of subsets S_i (as lists) 
     of vertices, where |S_i| = maximum size of a PDS.
     """
-    return list(combinations(range(G.number_of_nodes()), 
+    return list(combinations(range(0, G.number_of_nodes()), 
                              pds_size(G.number_of_nodes(), max_degree(G))))
 
 def pds_size(vertices_nb, max_degree):
