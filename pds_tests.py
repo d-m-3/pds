@@ -189,6 +189,15 @@ class TestMaxPdsCubicGraphs(unittest.TestCase):
             # Check that every vertex has degree k.
             for v in G.nodes():
                 self.assertEqual(G.degree(v), k)
+                
+    def test_create_random_caterpillar(self):
+        '''
+        Tests that the randomly created caterpillar has at least "n" nodes.
+        '''
+        n = 5
+        for graph in range(0, 50):
+            C = pds.create_random_caterpillar(5, 0.1)
+            self.assertTrue(C.number_of_nodes() >= n)
         
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestMaxPdsCubicGraphs)

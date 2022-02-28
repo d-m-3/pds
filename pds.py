@@ -243,6 +243,16 @@ def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
         while G.has_edge(v_X, v_Y):
             v_Y = random.choice(incr_deg_Y)[0]
     return v_Y
+
+def create_random_caterpillar(n, p):
+    '''
+    Returns a random caterpillar graph with at least "n" backbone vertices, 
+    and a "p" probability of adding an edge to the backbone.
+    '''
+    C = nx.generators.random_graphs.random_lobster(n, p, 0)
+    while len(C.nodes()) < n:
+        C = nx.generators.random_graphs.random_lobster(n, p, 0)
+    return C
     
 def draw_graph(G, max_pds, layout="circular"):
     """
