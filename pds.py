@@ -244,13 +244,14 @@ def _get_appropriate_random_vertex_in_Y(G, Y, v_X, k):
             v_Y = random.choice(incr_deg_Y)[0]
     return v_Y
 
-def create_random_caterpillar(n, p):
+def create_random_caterpillar(n, p, max_deg=10):
     '''
     Returns a random caterpillar graph with at least "n" backbone vertices, 
     and a "p" probability of adding an edge to the backbone.
+    The maximum degree of the caterpillar can be given.
     '''
     C = nx.generators.random_graphs.random_lobster(n, p, 0)
-    while len(C.nodes()) < n:
+    while len(C.nodes()) < n or max_degree(C) > max_deg:
         C = nx.generators.random_graphs.random_lobster(n, p, 0)
     return C
     
