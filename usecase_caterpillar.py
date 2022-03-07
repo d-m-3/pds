@@ -1,6 +1,5 @@
 import pds
 
-
 # Caterpillar graph
 C = pds.create_random_caterpillar(6, 0.42, max_deg=3)
 max_pds = pds.find_one_max_pds(C)
