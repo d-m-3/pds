@@ -3,7 +3,7 @@ import gex
 
 def main():
     """
-    This file shows and draws a specific cubic graph on 18 vertices with
+    This file draws a specific cubic graph on 18 vertices with
     a PDS that has not the same number of vertices in independent sets
     X and Y, expressed here as an "unbalanced PDS", which is unusual.
     """
