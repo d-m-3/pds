@@ -11,18 +11,18 @@ def Gex1():
     not have a PDS of the maximum size.
     """
     Gexception1 = nx.Graph()
+    Gexception1.add_edge(0,1)
     Gexception1.add_edge(1,2)
     Gexception1.add_edge(2,3)
     Gexception1.add_edge(3,4)
     Gexception1.add_edge(4,5)
     Gexception1.add_edge(5,6)
     Gexception1.add_edge(6,7)
-    Gexception1.add_edge(7,8)
-    Gexception1.add_edge(8,1)
+    Gexception1.add_edge(7,0)
+    Gexception1.add_edge(1,3)
     Gexception1.add_edge(2,4)
-    Gexception1.add_edge(3,5)
-    Gexception1.add_edge(6,8)
-    Gexception1.add_edge(7,1)
+    Gexception1.add_edge(5,7)
+    Gexception1.add_edge(6,0)
     return Gexception1
 
 def Gex2():
@@ -31,18 +31,18 @@ def Gex2():
     not have a PDS of the maximum size.
     """
     Gexception2 = nx.Graph()
+    Gexception2.add_edge(0,1)
     Gexception2.add_edge(1,2)
     Gexception2.add_edge(2,3)
     Gexception2.add_edge(3,4)
     Gexception2.add_edge(4,5)
     Gexception2.add_edge(5,6)
     Gexception2.add_edge(6,7)
-    Gexception2.add_edge(7,8)
-    Gexception2.add_edge(8,1)
-    Gexception2.add_edge(1,6)
-    Gexception2.add_edge(2,5)
-    Gexception2.add_edge(3,8)
-    Gexception2.add_edge(4,7)
+    Gexception2.add_edge(7,0)
+    Gexception2.add_edge(0,5)
+    Gexception2.add_edge(1,4)
+    Gexception2.add_edge(2,7)
+    Gexception2.add_edge(3,6)
     return Gexception2
 
 def G_two_K4():
@@ -202,6 +202,12 @@ def G_algorithm1_failure_14():
     return G
 
 def G_cubic_bipartite_unbalanced_pds():
+    """
+    Specific cubic graph on 18 vertices with
+    a PDS [0, 1, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17] that has not the 
+    same number of vertices in independent sets X and Y, expressed here as 
+    an "unbalanced PDS", which is unusual.
+    """
     G = nx.Graph()
     G.add_edge(0, 9)
     G.add_edge(0, 10)
@@ -231,4 +237,3 @@ def G_cubic_bipartite_unbalanced_pds():
     G.add_edge(8, 16)
     G.add_edge(8, 17)
     return G
-    
