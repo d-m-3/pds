@@ -12,23 +12,28 @@ class TestFindOneMaxPds(unittest.TestCase):
     """
     Tests the function `find_one_max_pds`.
     """
-    def test_find_one_max_pds(self):
+    def test_graph1(self):
         G = gex.G_test_6()
         self.assertEqual(pds.find_one_max_pds(G), [0, 1, 4, 5])
+        
+    def test_graph2(self):
+        G = gex.G_test_12()
+        self.assertEqual(pds.find_one_max_pds(G), [0, 1, 2, 3, 4, 6, 7, 9])
 
 class TestGetAllMaxPds(unittest.TestCase):
     """
     Tests the function `get_all_max_pds`.
     """
-    def test_get_all_max_pds(self):
+    def test_graph1(self):
         G = gex.G_test_6()
         self.assertEqual(pds.get_all_max_pds(G), [[0, 1, 4, 5], [0, 2, 3, 5], 
                                                   [1, 2, 3, 4]])
+        
 class TestMaxDegree(unittest.TestCase):  
     """
     Tests the function `max_degree`.
     """
-    def test_specific_graph(self):
+    def test_graph1(self):
         G = gex.G_test_6()
         self.assertEqual(pds.max_degree(G), 3)
     
@@ -71,6 +76,9 @@ class TestPdsSize(unittest.TestCase):
         self.assertEqual(pds.pds_size(20, 3), 13)
         
     def test_pds_size4(self):
+        self.assertEqual(pds.pds_size(24, 3), 16)
+        
+    def test_pds_size5(self):
         self.assertEqual(pds.pds_size(24, 5), 19)
         
 class TestIsSubgraphAPds(unittest.TestCase):
@@ -147,16 +155,24 @@ class TestIsPdsMax(unittest.TestCase):
     """
     Tests the function `is_pds_max`.
     """
-    def test_is_pds_max(self):
+    def test_graph1_True(self):
         G = gex.G_test_6()
         self.assertEqual(pds.is_pds_max(G, [0, 1, 4, 5], 6), True)
+        
+    def test_graph2_False(self):
+        G = gex.G_test_12()
+        self.assertEqual(pds.is_pds_max(G, [0, 1, 2, 3, 4, 6, 7], 12), False)
 
 class TestGetNodesNotPartOfPds(unittest.TestCase):
     """
     Tests the function `get_nodes_not_part_of_pds`.
     """
-    def test_get_nodes_not_part_of_pds(self):
+    def test_graph1(self):
         G = gex.G_test_6()
+        self.assertEqual(pds.get_nodes_not_part_of_pds(G), [])
+    
+    def test_graph2(self):
+        G = gex.G_test_12()
         self.assertEqual(pds.get_nodes_not_part_of_pds(G), [])
         
 class TestGetPdsEveryVDs2(unittest.TestCase):
@@ -167,7 +183,7 @@ class TestGetPdsEveryVDs2(unittest.TestCase):
         G = gex.G_test_6()
         self.assertEqual(pds.get_pds_every_v_ds2(G), [0, 1, 4, 5])
         
-    def test_graph2(self):
+    def test_graph3(self):
         G = gex.G_test_10()
         self.assertEqual(pds.get_pds_every_v_ds2(G), 
                          [0, 1, 2, 3, 4, 5, 9])
@@ -176,25 +192,25 @@ class TestGetPdsEveryVDs2AndUWds3(unittest.TestCase):
     """
     Tests the function `get_pds_every_v_ds2_and_u_w_ds3`.
     """
-    def test_graph1_v1(self):
+    def test_graph3_v1(self):
         G = gex.G_test_10_2ds3()
         a_pds, ds3 = pds.get_pds_every_v_ds2_and_ds3(G, 2)
         self.assertEqual(a_pds, [0, 1, 2, 3, 5, 6, 7])
         self.assertEqual(ds3, 2)
         
-    def test_graph1_v2(self):
+    def test_graph3_v2(self):
         G = gex.G_test_10_2ds3()
         a_pds_2, ds3_2 = pds.get_pds_every_v_ds2_and_ds3(G, 1)
         self.assertEqual(a_pds_2, [])
         self.assertEqual(ds3_2, -1)
     
-    def test_graph2(self):
+    def test_graph3(self):
         G = gex.G_test_10()
         a_pds_3, ds3_3 = pds.get_pds_every_v_ds2_and_ds3(G, 2)
         self.assertEqual(a_pds_3, [0, 1, 2, 3, 4, 5, 9])
         self.assertEqual(ds3_3, 0)
         
-    def test_graph3(self):
+    def test_graph1(self):
         # Test the special case where d_s = 2 for every vertex v in the PDS.
         G2 = gex.G_test_6()
         a_pds_4, ds3_4 = pds.get_pds_every_v_ds2_and_ds3(G2, 0)
