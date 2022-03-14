@@ -272,11 +272,11 @@ class TestCreateRandomCaterpillar(unittest.TestCase):
     Tests the function `create_random_caterpillar`.
     """
     def test_different_caterpillars(self):
-        n = 5
+        n = 6
         deg = 5
         # Tests for 10 different graphs.
         for graph in range(0, 10):
-            C = pds.create_random_caterpillar(5, 0.1, max_deg=5)
+            C = pds.create_random_caterpillar(n, 0.1, max_deg=deg)
             self.assertTrue(C.number_of_nodes() >= n) # Has at least "n" nodes
             self.assertTrue(pds.max_degree(C) <= deg) # Maximum degree
     
@@ -285,10 +285,10 @@ class TestCreateRandomTree(unittest.TestCase):
     Tests the function `create_random_tree`.
     """
     def test_create_random_tree(self):
-        n = 5
+        n = 15
         deg = 5
         for graph in range(0, 10):
-            T = pds.create_random_tree(5, max_deg=5)
+            T = pds.create_random_tree(n, max_deg=deg)
             self.assertTrue(T.number_of_nodes() >= n) # Has at least "n" nodes
             self.assertTrue(pds.max_degree(T) <= deg) # Maximum degree
         

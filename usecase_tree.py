@@ -1,7 +1,7 @@
 import pds
 
 # Tree
-T = pds.create_random_tree(20, max_deg=3)
+T = pds.create_random_tree(20, max_deg=10)
 max_pds = pds.find_one_max_pds(T)
 pds.draw_graph(T, max_pds, layout="spring")
 
