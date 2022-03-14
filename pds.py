@@ -248,12 +248,23 @@ def create_random_caterpillar(n, p, max_deg=10):
     '''
     Returns a random caterpillar graph with at least "n" backbone vertices, 
     and a "p" probability of adding an edge to the backbone.
-    The maximum degree of the caterpillar can be given.
+    The maximum degree of the caterpillar can be given. The default maximum
+    degree is 10.
     '''
     C = nx.generators.random_graphs.random_lobster(n, p, 0)
     while len(C.nodes()) < n or max_degree(C) > max_deg:
         C = nx.generators.random_graphs.random_lobster(n, p, 0)
     return C
+
+def create_random_tree(nb_vertices, max_deg=10):
+    '''
+    Returns a random tree graph with "n" vertices. The maximum degree of 
+    the tree can be given. The default maximum degree is 10.
+    '''
+    T = nx.random_tree(nb_vertices)
+    while max_degree(T) > max_deg:
+        T = nx.random_tree(nb_vertices)
+    return T
     
 def draw_graph(G, max_pds, layout="circular"):
     """

@@ -1,6 +1,6 @@
 import pds
 
-# Caterpillar graph
+# Caterpillar
 C = pds.create_random_caterpillar(6, 0.42, max_deg=3)
 max_pds = pds.find_one_max_pds(C)
 pds.draw_graph(C, max_pds, layout="spring")
