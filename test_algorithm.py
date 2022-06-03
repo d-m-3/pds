@@ -1,6 +1,7 @@
 import networkx as nx
 import pds
 
+
 def pds_k_regular_bipartite_algorithm(BG):
     """
     Returns a PDS of the maximum size. Algorithm 26.10.2021.

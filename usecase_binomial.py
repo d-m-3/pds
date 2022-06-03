@@ -1,6 +1,7 @@
 import pds
 import networkx as nx
 
+
 def main():
     """
     Creates an Erdős-Rényi graph of maximum degree 3, also known as 

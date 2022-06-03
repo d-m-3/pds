@@ -1,5 +1,6 @@
 import pds
 
+
 def get_tree_without_max_pds(vertices_nb, max_degree):
     """
     Returns a tree that does not have a PDS of maximum size.

@@ -5,6 +5,7 @@ This file contains exception graphs, specific graphs used for unit tests,
 and graphs that have a particularity.
 """
 
+
 def Gex1():
     """
     Returns graph exception 1 from PDS paper, i.e. a cubic graph that does 
