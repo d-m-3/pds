@@ -2,7 +2,8 @@ import pds
 
 def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
     """
-    Goal: Test the conjecture "Every cubic graph G = (V, E), with |V| > 8, 
+    Goal: Tests the following conjecture computationally 
+    "Every cubic graph G = (V, E), with |V| > 8, 
     has at least one PDS S of maximum size, where d_S(u) = 2 for every 
     vertex u in V". This conjecture was proven to be wrong by the finding 
     of counterexamples.

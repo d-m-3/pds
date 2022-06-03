@@ -277,7 +277,7 @@ def draw_graph(G, max_pds, layout="circular"):
         X = nx.algorithms.bipartite.sets(G)[0]
         pos = nx.drawing.layout.bipartite_layout(G, X)
     elif layout == "spring":
-        pos = nx.spring_layout(G)
+        pos = nx.spring_layout(G, seed=0)
     else: # Circular.
         pos = nx.circular_layout(G)
     color_dict = {}

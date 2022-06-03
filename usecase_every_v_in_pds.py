@@ -3,14 +3,18 @@ import pds
 
 def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
-    It creates random cubic graphs and tests if, for every graph, every vertex
-    is part of at least one PDS of maximum size. If the program finds a 
-    graph in which there are vertices that are not part of any PDS, the graph 
-    is drawn, the vertices that are not part of any PDS are displayed, and 
-    the program's execution is stopped. The number of vertices in a graph and 
-    the number of created and tested graphs can be defined. If the boolean 
-    "only_nh" is set to "True", only cubic graphs that do not have a 
-    Hamiltonian cycle are considered (please notice that it takes much longer).
+    Goal: Test the following conjecture computationally: 
+    "For any cubic graph G = (V, E) with |V| > 8, every vertex is part of 
+    at least one PDS of maximum size".\
+    Execution and details: It creates random cubic graphs and tests if, 
+    for every graph, every vertex is part of at least one PDS of maximum size. 
+    If the program finds a graph in which some vertices are not part of 
+    any PDS, the graph is drawn, the vertices not belonging to any PDS 
+    are displayed, and the program's execution is stopped. The number of 
+    vertices in a graph and the number of created and tested graphs can 
+    be defined. If the boolean "only_nh" is set to "True", only cubic graphs 
+    that do not have a Hamiltonian cycle are considered (please notice that 
+    it takes much longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and"
           " checking if \nevery vertex of the graph is part of at least one"
