@@ -1,5 +1,6 @@
 import pds
 
+
 def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
     """
     Goal: Tests the following conjecture computationally 

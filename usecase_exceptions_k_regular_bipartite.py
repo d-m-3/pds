@@ -25,6 +25,5 @@ def main():
         pds.display_progress(i, graphs_nb)
     pds.draw_graph(BG, max_pds, layout="bipartite")
     
-    
 if __name__ == '__main__':
     main()

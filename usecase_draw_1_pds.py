@@ -1,5 +1,6 @@
 import pds
 
+
 def main():
     """
     Goal: Draw a graph and show one PDS of maximum size.
@@ -10,7 +11,6 @@ def main():
     case, a specific layout for bipartite graphs can be used.
     """
     vertices_nb = 18
-    #G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
     k = 3
     G = pds.get_k_regular_bipartite_graph(vertices_nb, k)
     max_pds = pds.find_one_max_pds(G)

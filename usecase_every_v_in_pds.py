@@ -24,14 +24,14 @@ def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
         nodes_not_in_pds = pds.get_nodes_not_part_of_pds(G)
         if len(nodes_not_in_pds) != 0:
             pds.draw_graph(G, [])
-            print(f"These nodes are not part of a PDS: {nodes_not_in_pds}")
+            print(f"These vertices are not part of a PDS: {nodes_not_in_pds}")
             break
         pds.display_progress(i, graphs_nb)
 
 def main():
     # If only_nh=True, vertices_nb must be >= 10
-    vertices_nb = 18
-    graphs_nb = 500
+    vertices_nb = 12
+    graphs_nb = 50
     check_every_v_in_pds(vertices_nb, graphs_nb, only_nh=False) 
 
 if __name__ == '__main__':
