@@ -88,7 +88,7 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 **Goal:** Return a tree that does not have a PDS of maximum size.
 - `usecase_binomial.py`\
 **Goal:** Create an Erdős-Rényi graph of maximum degree 3, also known as a binomial graph, and tries to find and draw a PDS of maximum size.
-- `gex.py`\ 
+- `gex.py`\
 Contains specific graphs used for unit tests and exceptions of cubic graphs on eight vertices, i.e., cubic graphs that do not have a PDS of maximum size.
 
 
