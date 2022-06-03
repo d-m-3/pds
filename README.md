@@ -81,11 +81,11 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 **Goal:** Generate, display and save random non-Hamiltonian cubic graphs on a given number of vertices.\
 **Execution and details:** It creates a random non-Hamiltonian cubic graph on a given number of vertices, saves it in the given folder, with the number of vertices at the end of the filename. It also saves the figure in .png format in the same directory.
 - `usecase_tree.py`\
-**Goal:** Create a random tree of maximum degree 3, finds and draws a PDS of maximum size.\
+**Goal:** Create a random tree of maximum degree 3, finds and draws a PDS of maximum size.
 - `usecase_caterpillar.py`\
-**Goal:** Create a random caterpillar of maximum degree 3, finds and draws a PDS of maximum size.\
+**Goal:** Create a random caterpillar of maximum degree 3, finds and draws a PDS of maximum size.
 - `usecase_tree_without_max_pds.py`\
-**Goal:** Return a tree that does not have a PDS of maximum size.\
+**Goal:** Return a tree that does not have a PDS of maximum size.
 - `usecase_binomial.py`\
 **Goal:** Create an Erdős-Rényi graph of maximum degree 3, also known as a binomial graph, and tries to find and draw a PDS of maximum size.
 - `gex.py`\ 
