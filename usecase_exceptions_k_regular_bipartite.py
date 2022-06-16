@@ -11,9 +11,9 @@ def main():
     execution is stopped. The number of vertices in a graph, the value of k, 
     and the number of created and tested graphs can be defined.
     """
-    n = 22
-    k = 4
-    graphs_nb = 1000
+    n = 28
+    k = 3
+    graphs_nb = 10
     for i in range(1, graphs_nb + 1):
         BG = pds.get_k_regular_bipartite_graph(n, k)
         max_pds = pds.find_one_max_pds(BG)
@@ -21,8 +21,8 @@ def main():
             print("Exception")
             pds.draw_graph(BG, max_pds, layout="bipartite")
             break
-        # If no exception could be found, draw the last graph with its PDS.
         pds.display_progress(i, graphs_nb)
+    # If no exception could be found, draw the last graph with its PDS.
     pds.draw_graph(BG, max_pds, layout="bipartite")
     
 if __name__ == '__main__':
