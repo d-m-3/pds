@@ -4,9 +4,12 @@ import pds
 
 def create_nham_cubic_graph(vertices_nb, filepath):
     """
-    It creates a non-Hamiltonian cubic graph on a given number of vertices, 
-    saves it in the given folder, with the number of vertices at the end of 
-    the filename. It also saves the figure in .png in the same directory.
+    Goal: Generate, display and save random non-Hamiltonian cubic graphs on 
+    a given number of vertices.
+    Execution and details: It creates a random non-Hamiltonian cubic graph 
+    on a given number of vertices, saves it in the given folder, with the 
+    number of vertices at the end of the filename. It also saves the figure 
+    in .png format in the same directory.
     """
     success = False
     # Tries for 50 graphs

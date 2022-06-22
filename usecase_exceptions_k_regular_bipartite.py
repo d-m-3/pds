@@ -4,16 +4,16 @@ import pds
 def main():
     """
     Goal: Search for k-regular bipartite graphs 
-    on |V| vertices that have no PDS of maximum size, with |V| > 8.
+    on |V| vertices, for |V| > 8, that admit no PDS of maximum size.
     Execution and details: It creates random k-regular bipartite graphs and 
     tests if they do not have a PDS of maximum size. If such a graph with 
     no PDS of maximum size is found, it is drawn and the program's 
     execution is stopped. The number of vertices in a graph, the value of k, 
     and the number of created and tested graphs can be defined.
     """
-    n = 28
+    n = 18
     k = 3
-    graphs_nb = 10
+    graphs_nb = 100
     for i in range(1, graphs_nb + 1):
         BG = pds.get_k_regular_bipartite_graph(n, k)
         max_pds = pds.find_one_max_pds(BG)

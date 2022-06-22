@@ -12,12 +12,12 @@ def main():
     case, a specific layout for bipartite graphs can be used.
     """
     vertices_nb = 18
-    # Cubic graph
+    # Cubic graph.
     G = pds.get_connected_cubic_graph(vertices_nb)
     max_pds = pds.find_one_max_pds(G)
     pds.draw_graph(G, max_pds)
     
-    # k-regular bipartite graph
+    # k-regular bipartite graph.
     '''
     k = 3
     G = pds.get_k_regular_bipartite_graph(vertices_nb, k)

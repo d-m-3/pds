@@ -4,8 +4,8 @@ import pds
 def check_every_v_ds2_ds3(vertices_nb, graphs_nb, ds3_nb, only_nh):
     """
     Goal: Tests the following conjecture computationally
-    "Every cubic graph G = (V, E), with |V| > 8, 
-    has at least one PDS S of maximum size, where d_S(u) = d_S(v) = 3 for 
+    "Every cubic graph G = (V, E), for |V| > 8, 
+    has at least one PDS G[S] of maximum size, where d_S(u) = d_S(v) = 3 for 
     at most two vertices u, v in S".
     Execution and details: It creates random cubic graphs and tests if, 
     for every graph, there exists a PDS of maximum size and d_s(v) = 2 

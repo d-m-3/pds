@@ -4,8 +4,8 @@ import networkx as nx
 
 def main():
     """
-    Creates an Erdős-Rényi graph of maximum degree 3, also known as 
-    a binomial graph, and tries to find and draw a PDS of maximum size.
+    Goal: Create an Erdős-Rényi graph of maximum degree 3, also known as 
+    a binomial graph, and try to find and draw a PDS of maximum size.
     """
     nb_vertices = 14
     G = nx.binomial_graph(nb_vertices, 0.3)

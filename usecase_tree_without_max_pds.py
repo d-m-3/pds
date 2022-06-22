@@ -3,7 +3,7 @@ import pds
 
 def get_tree_without_max_pds(vertices_nb, max_degree):
     """
-    Returns a tree that does not have a PDS of maximum size.
+    Goal: Return a tree that does not admit a PDS of maximum size.
     """
     T = pds.create_random_tree(vertices_nb, max_deg=max_degree)
     max_pds = pds.find_one_max_pds(T)
@@ -13,8 +13,10 @@ def get_tree_without_max_pds(vertices_nb, max_degree):
     return T
     
 def main():
-   T = get_tree_without_max_pds(20, 3)
-   pds.draw_graph(T, [], layout="spring")
+    print("Computing. Please wait...")
+    T = get_tree_without_max_pds(20, 3)
+    pds.draw_graph(T, [], layout="spring")
+    print("Done.")
     
 if __name__ == '__main__':
     main()

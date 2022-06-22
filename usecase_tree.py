@@ -3,18 +3,13 @@ import pds
 
 def main():
     """
-    Creates a tree of maximum degree 3, finds and draws a PDS of maximum size.
+    Goal: Create a random tree of maximum degree 3, find and draw a PDS 
+    of maximum size.
     """
     nb_vertices = 20
     T = pds.create_random_tree(nb_vertices, max_deg=3)
     max_pds = pds.find_one_max_pds(T)
     pds.draw_graph(T, max_pds, layout="spring")
-    
-    '''
-    # VARIANT: draws the tree without PDS and then all the PDSs.
-    pds.draw_graph(T, [], layout="spring")
-    pds.draw_all_max_pds(T, layout="spring")
-    '''
     
     # Print characteristics of the tree.
     max_degree = pds.max_degree(T)
