@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 
 """
-Main library for finding PDSs in cubic graphs and k-regular bipartite graphs, 
-drawing these graphs and highlighting their PDSs, and generating cubic graphs 
-and k-regular bipartite graphs randomly. It can be imported as a module 
-for your project by using "import pds".
+Main library for computing and showing proportionally dense subgraphs (PDSs) 
+of maximum size in graphs. Alternatively, the library can be used to generate random cubic graphs and k-regular bipartite graphs. Specifically, cubic graphs, k-regular bipartite graphs, and trees can be drawn along with their PDSs.
+This library can be imported as a module in any Python project by using 
+"import pds".
 """
 
 

@@ -1,10 +1,10 @@
 # pds
 ## Proportionally Dense Subgraphs - Overview
-`pds` is a library written in *Python* for computing and showing proportionally dense subgraphs (PDSs) of maximum size. Specifically, cubic and k-regular bipartite graphs can be studied and drawn along with their PDSs. Alternatively, the framework can be used to generate random cubic and k-regular bipartite graphs.
+`pds` is a library written in *Python* for computing and showing proportionally dense subgraphs (PDSs) of maximum size in graphs. Alternatively, the library can be used to generate random cubic graphs and k-regular bipartite graphs. Specifically, cubic graphs, k-regular bipartite graphs, and trees can be drawn along with their PDSs. This library can be imported as a module in any *Python* project by using `import pds`.
 
 Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph" (source: https://arxiv.org/abs/1903.06579)*.
 
-The project also contains several *use cases* that show specific usages of the library. Some use cases were used to test conjectures about PDSs in cubic and k-regular bipartite graphs. These use cases are described in the section *Usage and Details* (see below).
+The project also contains a non-exhaustive list of *use cases* that show possible usage of the library. In addition, some use cases were used to test conjectures about PDSs in cubic graphs and k-regular bipartite graphs. The use cases are described in the section *Usage and Details* (see below).
 
 ## Installation
 ### On Debian-based Linux
@@ -57,8 +57,8 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 - `pds.py` is the main library for finding PDSs, drawing graphs along with their PDSs, and generating random cubic and k-regular bipartite graphs. It can be imported as a module in your project (see *External Usage* below).
 - `pds_tests.py` contains the unit tests for all the functions in `pds.py`, except for the functions that draw and/or save graphs.
 - `usecase_draw_1_pds.py`\
-**Goal:** Draw a cubic or k-regular bipartite graph and show one PDS of maximum size.\
-**Execution and details:** It creates a random cubic graph on a given number of vertices. It finds a PDS of maximum size, draws the graph, and colors the vertices of the PDS in red. Alternatively, it can create and draw a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
+**Goal:** Draw a cubic graph or a k-regular bipartite graph and show one PDS of maximum size.\
+**Execution and details:** It creates a random cubic graph or a k-regular bipartite graph on a given number of vertices. It finds a PDS of maximum size, draws the graph, and colors the vertices of the PDS in red. Alternatively, it can create and draw a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
 - `usecase_draw_all_pds.py`\
 **Goal:** Draw all the possible PDSs of maximum size for a given cubic or k-regular bipartite graph.\
 **Execution and details:** It creates a random cubic graph on a given number of vertices. It finds all its PDSs of maximum size and draws all the different PDSs on different figures (vertices belonging to a PDS are colored in red). Alternatively, it can create a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.

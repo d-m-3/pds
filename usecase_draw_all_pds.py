@@ -12,8 +12,9 @@ def main():
     bipartite graphs can be used.
     """
     vertices_nb = 12
-    G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
-    pds.draw_all_max_pds(G)
+    #G = pds.get_connected_cubic_graph(vertices_nb, only_nh=True)
+    G = pds.get_k_regular_bipartite_graph(vertices_nb, 3)
+    pds.draw_all_max_pds(G, layout="bipartite")
 
 if __name__ == '__main__':
     main()
