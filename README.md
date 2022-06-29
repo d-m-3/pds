@@ -93,7 +93,7 @@ Contains specific graphs used for unit tests and exceptions of cubic graphs on e
 
 
 ## External Usage
-You can import the `pds` library in your own Python project:
+You can import the `pds` library in any *Python* project:
 
 ```python
 import pds

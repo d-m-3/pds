@@ -8,7 +8,9 @@ from itertools import combinations
 
 """
 Main library for computing and showing proportionally dense subgraphs (PDSs) 
-of maximum size in graphs. Alternatively, the library can be used to generate random cubic graphs and k-regular bipartite graphs. Specifically, cubic graphs, k-regular bipartite graphs, and trees can be drawn along with their PDSs.
+of maximum size in graphs. Alternatively, the library can be used to generate 
+random cubic graphs and k-regular bipartite graphs. Specifically, cubic graphs, 
+k-regular bipartite graphs, and trees can be drawn along with their PDSs.
 This library can be imported as a module in any Python project by using 
 "import pds".
 """
