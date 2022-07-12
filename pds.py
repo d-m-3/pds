@@ -74,7 +74,7 @@ def is_vertex_satisfied_in_subgraph(vertex, G, subgraph):
     """
     Returns True if the given vertex is satisfied in the subgraph, i.e.
     the vertex satisfies the conditions to be considered in the subgraph, 
-    so that the subgraph is a PDS.
+    such that the subgraph is a PDS.
     """
     deg_s_frac = deg_subgraph(vertex, G, subgraph) / (len(subgraph) - 1)
     deg_frac = G.degree(vertex) / (G.number_of_nodes() - 1)

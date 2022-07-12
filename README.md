@@ -63,19 +63,19 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 **Goal:** Draw all the possible PDSs of maximum size for a given cubic graph or k-regular bipartite graph.\
 **Execution and details:** It creates a random cubic graph on a given number of vertices. It finds all its PDSs of maximum size and draws all the different PDSs on different figures (vertices belonging to a PDS are colored in red). Alternatively, it can create a random k-regular bipartite graph instead of a cubic graph. In that case, a specific layout for bipartite graphs can be used.
 - `usecase_exceptions_cubic.py`\
-**Goal:** Search for cubic graphs on *|V|* vertices, with *|V| > 8*, that admit no PDS of maximum size.\
+**Goal:** Search for cubic graphs on *|V|* vertices with *|V| > 8*, that admit no PDS of maximum size.\
 **Execution and details:** It creates random cubic graphs and tests if they do not have a PDS of maximum size. If such a graph with no PDS of maximum size is found, it is drawn, saved as a .png figure and as an edge list that can be imported later, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_exceptions_k_regular_bipartite.py`\
-**Goal:** Search for k-regular bipartite graphs on *|V|* vertices, for *|V| > 8*, that admit no PDS of maximum size.\
+**Goal:** Search for k-regular bipartite graphs on *|V|* vertices with *|V| > 8*, that admit no PDS of maximum size.\
 **Execution and details:** It creates random k-regular bipartite graphs and tests if they do not have a PDS of maximum size. If such a graph with no PDS of maximum size is found, it is drawn and the program's execution is stopped. The number of vertices in a graph, the value of *k*, and the number of created and tested graphs can be defined.
 - `usecase_every_v_in_pds.py`\
-**Goal:** Test the following conjecture computationally "For any cubic graph *G = (V, E)* for *|V| > 8*, every vertex is part of at least one PDS of maximum size".\
+**Goal:** Test the following conjecture computationally "For any cubic graph *G = (V, E)* with *|V| > 8*, every vertex is part of at least one PDS of maximum size".\
 **Execution and details:** It creates random cubic graphs and tests if, for every graph, every vertex is part of at least one PDS of maximum size. If the program finds a graph in which some vertices are not part of any PDS, the graph is drawn, the vertices not belonging to any PDS are displayed, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_every_v_ds2.py`\
-**Goal:** Test the following conjecture computationally "Every cubic graph *G = (V, E)*, for *|V| > 8*, has at least one PDS *G[S]* of maximum size, where *d_S(u) = 2* for every vertex *u* in *S*". This conjecture was proven to be wrong by the finding of counterexamples.\
+**Goal:** Test the following conjecture computationally "Every cubic graph *G = (V, E)* with *|V| > 8*, has at least one PDS *G[S]* of maximum size, where *d_S(u) = 2* for every vertex *u* in *S*". This conjecture was proven to be wrong by the finding of counterexamples.\
 **Execution and details:** It creates random cubic graphs and tests if, for every graph, there exists a PDS of maximum size and *d_s(v) = 2* for every vertex *v*. If there is no such PDS for a graph, the graph and all the PDSs of maximum size are drawn, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_every_v_ds2_ds3.py`\
-**Goal:** Test the following conjecture computationally "Every cubic graph *G = (V, E)*, for *|V| > 8*, has at least one PDS *G[S]* of maximum size, where *d_S(u) = d_S(v) = 3* for at most two vertices *u, v* in *S*".\
+**Goal:** Test the following conjecture computationally "Every cubic graph *G = (V, E)* with *|V| > 8*, has at least one PDS *G[S]* of maximum size, where *d_S(u) = d_S(v) = 3* for at most two vertices *u, v* in *S*".\
 **Execution and details:** It creates random cubic graphs and tests if, for every graph, there exists a PDS of maximum size and *d_s(v) = 2* for every vertex *v*, except for at most `ds3_nb` vertices, where *d_s(v) = 3*. If there is no such PDS for a graph, the graph and all the PDSs of maximum size are drawn, and the program's execution is stopped. The number of vertices in a graph and the number of created and tested graphs can be defined. If the boolean "only_nh" is set to "True", only cubic graphs that do not have a Hamiltonian cycle are considered (please notice that it takes much longer).
 - `usecase_create_nham_graph.py`\
 **Goal:** Generate, display and save random non-Hamiltonian cubic graphs on a given number of vertices.\
@@ -93,7 +93,7 @@ Contains specific graphs used for unit tests and exceptions of cubic graphs on e
 
 
 ## External Usage
-You can import the `pds` library in any *Python* project:
+You can import the `pds` library into any *Python* project:
 
 ```python
 import pds
