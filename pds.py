@@ -8,17 +8,17 @@ from itertools import combinations
 
 """
 Main library for computing and showing proportionally dense subgraphs (PDSs) 
-of maximum size in graphs. Alternatively, the library can be used to generate 
-random cubic graphs and k-regular bipartite graphs. Specifically, cubic graphs, 
-k-regular bipartite graphs, and trees can be drawn along with their PDSs.
-This library can be imported as a module in any Python project by using 
-"import pds".
+of maximum possible size in graphs. Alternatively, the library can be used to 
+generate random cubic graphs and k-regular bipartite graphs. Specifically,
+cubic graphs, k-regular bipartite graphs, and trees can be drawn along with 
+their PDSs. This library can be imported as a module in any Python project by 
+using "import pds".
 """
 
 
 def find_one_max_pds(G):
     """
-    Returns a list containing one PDS of maximum size. The PDS may not
+    Returns a list containing one PDS of maximum possible size. The PDS may not
     be connected.
     """
     combs = get_combinations_of_subsets(G)
@@ -30,8 +30,8 @@ def find_one_max_pds(G):
 
 def get_all_max_pds(G):
     """
-    Returns a list containing all lists of PDSs of maximum size. The PDSs
-    may not be connected.
+    Returns a list containing all lists of PDSs of maximum possible size. 
+    The PDSs may not be connected.
     """
     combs = get_combinations_of_subsets(G)
     all_pds = []
@@ -49,7 +49,7 @@ def max_degree(G):
 def get_combinations_of_subsets(G):
     """
     Returns a list of all possible combinations of subsets S_i (as lists) 
-    of vertices, where |S_i| = maximum size of a PDS.
+    of vertices, where |S_i| = maximum possible size of a PDS.
     """
     return list(combinations(range(0, G.number_of_nodes()), 
                              pds_size(G.number_of_nodes(), max_degree(G))))
@@ -88,7 +88,7 @@ def deg_subgraph(vertex, G, subgraph):
 
 def is_pds_max(G, max_pds, vertices_nb):
     """
-    Returns True if the given PDS is of maximum size. Otherwise, 
+    Returns True if the given PDS is of maximum possible size. Otherwise, 
     returns False. For cubic graphs of eight vertices, three graph exceptions 
     are not considered.
     """
@@ -108,12 +108,12 @@ def is_pds_max(G, max_pds, vertices_nb):
 def get_nodes_not_part_of_pds(G):
     """
     Returns a list of vertices that are not part of at least one PDS of
-    maximum size.
+    maximum possible size.
     """
     all_pds = get_all_max_pds(G)
     nodes_not_part_of_pds = []
     for vertex in G.nodes():
-        # If a vertex is not found in any PDS of maximum size,
+        # If a vertex is not found in any PDS of maximum possible size,
         # append it to the list to be returned.
         if not (vertex in (item for sublist in all_pds for item in sublist)):
             nodes_not_part_of_pds.append(vertex)
@@ -121,7 +121,7 @@ def get_nodes_not_part_of_pds(G):
 
 def get_pds_every_v_ds2(G):
     """
-    Returns a list containing one PDS of maximum size, where for every
+    Returns a list containing one PDS of maximum possible size, where for every
     vertex v, d_S(v) = 2, in 3-regular (cubic) graphs. 
     The PDS may not be connected.
     """
@@ -138,8 +138,8 @@ def get_pds_every_v_ds2(G):
 
 def get_pds_every_v_ds2_and_ds3(G, ds3_nb):
     """
-    Returns a list containing one PDS of maximum size where d_S(v) = 2 for 
-    every vertex v, except for at most "ds3_nb" where d_s(v) = 3,
+    Returns a list containing one PDS of maximum possible size where d_S(v) = 2 
+    for every vertex v, except for at most "ds3_nb" where d_s(v) = 3,
     in cubic graphs. The PDS may be disconnected.
     """
     all_max_pds = get_all_max_pds(G)
@@ -272,7 +272,7 @@ def create_random_tree(nb_vertices, max_deg=10):
 def draw_graph(G, max_pds, layout="circular"):
     """
     Draws the graph and highlights in red the vertices that belong to
-    a PDS of maximum size and returns the drawn graph.
+    a PDS of maximum possible size and returns the drawn graph.
     By default, ciruclar layout is used. 
     Bipartite and spring layouts can be used as an option.
     """
@@ -296,7 +296,7 @@ def draw_graph(G, max_pds, layout="circular"):
 
 def draw_all_max_pds(G, layout="circular"):
     """
-    Draws all the PDSs of maximum size for the given graph G.
+    Draws all the PDSs of maximum possible size for the given graph G.
     By default, ciruclar layout is used. 
     Bipartite and spring layouts can be used as an option.
     """
