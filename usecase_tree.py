@@ -4,7 +4,7 @@ import pds
 def main():
     """
     Goal: Create a random tree of maximum degree 3, find and draw a PDS 
-    of maximum size.
+    of maximum possible size.
     """
     nb_vertices = 20
     T = pds.create_random_tree(nb_vertices, max_deg=3)

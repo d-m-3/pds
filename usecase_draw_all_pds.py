@@ -3,11 +3,11 @@ import pds
 
 def main():
     """
-    Goal: Draw all the possible PDSs of maximum size for a given cubic graph 
-    or k-regular bipartite graph.
+    Goal: Draw all the possible PDSs of maximum possible size for a given 
+    cubic graph or k-regular bipartite graph.
     Execution and details: It creates a random cubic graph on a given number 
-    of vertices. It finds all its PDSs of maximum size and draws all the 
-    different PDSs on different figures (vertices belonging to a PDS are 
+    of vertices. It finds all its PDSs of maximum possible size and draws all 
+    the different PDSs on different figures (vertices belonging to a PDS are 
     colored in red). Alternatively, it can create a random k-regular bipartite 
     graph instead of a cubic graph. In that case, a specific layout for 
     bipartite graphs can be used.

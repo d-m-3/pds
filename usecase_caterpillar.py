@@ -4,7 +4,7 @@ import pds
 def main():
     """
     Goal: Create a random caterpillar of maximum degree 3, find and draw 
-    a PDS of maximum size.
+    a PDS of maximum possible size.
     """
     min_nb_vertices = 6
     C = pds.create_random_caterpillar(min_nb_vertices, 0.42, max_deg=3)

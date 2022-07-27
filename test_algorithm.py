@@ -4,7 +4,7 @@ import pds
 
 def pds_k_regular_bipartite_algorithm(BG):
     """
-    Returns a PDS of the maximum size. Algorithm 26.10.2021.
+    Returns a PDS of the maximum possible size. Algorithm 26.10.2021.
     """
     X = {n for n, d in BG.nodes(data=True) if d["bipartite"] == 0}
     Y = set(BG) - X
