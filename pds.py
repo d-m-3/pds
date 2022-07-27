@@ -8,11 +8,11 @@ from itertools import combinations
 
 """
 Main library for computing and showing proportionally dense subgraphs (PDSs) 
-of maximum possible size in graphs. Alternatively, the library can be used to 
-generate random cubic graphs and k-regular bipartite graphs. Specifically,
-cubic graphs, k-regular bipartite graphs, and trees can be drawn along with 
-their PDSs. This library can be imported as a module in any Python project by 
-using "import pds".
+of maximum possible size in a given graph. Alternatively, the library can be 
+used to generate random cubic graphs and k-regular bipartite graphs. 
+Specifically, cubic graphs, k-regular bipartite graphs, and trees can be drawn 
+along with their PDSs of maximum possible size. This library can be imported as 
+a module into any Python project by using "import pds".
 """
 
 
@@ -49,14 +49,15 @@ def max_degree(G):
 def get_combinations_of_subsets(G):
     """
     Returns a list of all possible combinations of subsets S_i (as lists) 
-    of vertices, where |S_i| = maximum possible size of a PDS.
+    of vertices of G for some integer i > 1, where the size of each S_i is the
+    maximum possible size of a PDS.
     """
     return list(combinations(range(0, G.number_of_nodes()), 
                              pds_size(G.number_of_nodes(), max_degree(G))))
 
 def pds_size(vertices_nb, max_degree):
     """
-    Returns maximum possible size of a PDS, according to the number of 
+    Returns the maximum possible size of a PDS, according to the number of 
     vertices and the maximum degree.
     """
     return math.floor(((vertices_nb * (max_degree - 1)) + 1)/ max_degree)
@@ -184,7 +185,7 @@ def hamiltonian_cycle(G):
 
 def get_connected_cubic_graph(vertices_nb, only_nh=False):
     """
-    Returns a random connected cubic graph with |V| = vertices_nb, 
+    Returns a random connected cubic graph on "vertices_nb" of vertices, 
     that is non-Hamiltonian if "only_nh" is True.
     """
     if only_nh:
@@ -261,8 +262,8 @@ def create_random_caterpillar(n, p, max_deg=10):
 
 def create_random_tree(nb_vertices, max_deg=10):
     '''
-    Returns a random tree graph with "n" vertices. The maximum degree of 
-    the tree can be given. The default maximum degree is 10.
+    Returns a random tree graph on "vertices_nb" of vertices. The maximum 
+    degree of the tree can be given. The default maximum degree is 10.
     '''
     T = nx.random_tree(nb_vertices)
     while max_degree(T) > max_deg:
@@ -271,7 +272,7 @@ def create_random_tree(nb_vertices, max_deg=10):
     
 def draw_graph(G, max_pds, layout="circular"):
     """
-    Draws the graph and highlights in red the vertices that belong to
+    Draws the graph and highlights in red vertices that belong to
     a PDS of maximum possible size and returns the drawn graph.
     By default, ciruclar layout is used. 
     Bipartite and spring layouts can be used as an option.

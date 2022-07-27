@@ -54,7 +54,7 @@ on the project's GitHub page: https://github.com/d-m-3/pds
 
 
 ## Usage and Details
-- `pds.py` is the main library for finding PDSs, drawing graphs along with their PDSs, and generating random cubic and k-regular bipartite graphs. It can be imported as a module in your project (see *External Usage* below).
+- `pds.py` is the main library for computing and showing PDSs of maximum possible size in graphs. Alternatively, the *pds* library also allows to generate and display random graphs of specific graph classes, such as cubic graphs, k-regular bipartite graphs, caterpillars and trees. The library can be imported as a module into any Python project (see *External Usage* below).
 - `pds_tests.py` contains the unit tests for all the functions in `pds.py`, except for the functions that draw and/or save graphs.
 - `usecase_draw_1_pds.py`\
 **Goal:** Draw a cubic graph or a k-regular bipartite graph and show one PDS of maximum possible size.\
