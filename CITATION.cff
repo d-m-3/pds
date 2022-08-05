@@ -4,7 +4,7 @@ authors:
   - family-names: Gurtner
     given-names: Dimitri
     orcid: 
-title: "Proportionally dense subgraphs (PDSs) in cubic graphs"
+title: "pds (proportionally dense subgraph)"
 version: 1.8
 doi:
 date-released: 2022-01-01
