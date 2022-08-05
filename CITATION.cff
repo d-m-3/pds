@@ -16,31 +16,3 @@ identifiers:
     value: 'https://github.com/d-m-3/pds'
     description: GitHub repository
 repository-code: 'https://github.com/d-m-3/pds'
-abstract: >-
-  pds is a library written in Python for computing
-  and showing proportionally dense subgraphs (PDSs)
-  of maximum possible size in any given graph.
-  Alternatively, the pds library also allows
-  generating and displaying random graphs of specific
-  graph classes, such as cubic graphs, k-regular
-  bipartite graphs, caterpillars, and trees. Thus,
-  one or all PDSs of maximum possible size can be
-  drawn on randomly generated instances of the
-  above-mentioned graph classes. This library can be
-  imported as a module into any Python project by
-  using import pds.
-
-  Bazgan et al. defined "a proportionally dense
-  subgraph (PDS) as an induced subgraph of a graph
-  with the property that each vertex in the PDS is
-  adjacent to proportionally as many vertices in the
-  subgraph as in the graph" (source:
-  https://arxiv.org/abs/1903.06579).
-
-  The project also contains a non-exhaustive list of
-  use cases that show possible usage of the library.
-  In addition, some use cases were used to test
-  conjectures about PDSs in cubic graphs and
-  k-regular bipartite graphs. The use cases are
-  described in the section Usage and Details (see
-  below).
