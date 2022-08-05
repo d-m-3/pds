@@ -30,14 +30,12 @@ abstract: >-
   imported as a module into any Python project by
   using import pds.
 
-
   Bazgan et al. defined "a proportionally dense
   subgraph (PDS) as an induced subgraph of a graph
   with the property that each vertex in the PDS is
   adjacent to proportionally as many vertices in the
   subgraph as in the graph" (source:
   https://arxiv.org/abs/1903.06579).
-
 
   The project also contains a non-exhaustive list of
   use cases that show possible usage of the library.
