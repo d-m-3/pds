@@ -4,7 +4,7 @@ import pds
 
 def create_nham_cubic_graph(vertices_nb, filepath):
     """
-    Goal: Generate, display and save random non-Hamiltonian cubic graphs on 
+    Goal: Generate, display, and save random non-Hamiltonian cubic graphs on 
     a given number of vertices.
     Execution and details: It creates a random non-Hamiltonian cubic graph 
     on a given number of vertices, saves it in the given folder, with the 

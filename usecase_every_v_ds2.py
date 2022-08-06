@@ -6,8 +6,8 @@ def check_every_v_ds2(vertices_nb, graphs_nb, only_nh):
     Goal: Tests the following conjecture computationally 
     "Every cubic graph G = (V, E) with |V| > 8, 
     has at least one PDS G[S] of maximum possible size, where d_S(u) = 2 for 
-    every vertex u in V". This conjecture was proven to be wrong by the finding 
-    of counterexamples.
+    every vertex u in S". We proved that this conjecture was false by finding 
+    counterexamples.
     Execution and details: It creates random cubic graphs and tests if, 
     for every graph, there exists a PDS of maximum possible size such that 
     d_S(v) = 2 for each vertex v in V. If there is no such PDS for a graph, 
