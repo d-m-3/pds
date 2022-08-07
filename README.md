@@ -21,21 +21,22 @@ pip install -r requirements.txt
 ```bash
 python3 --version
 ```
-   If *Python 3* is not installed, see [this link](https://www.python.org/downloads/macos/) and install *Python 3*.
-2. Download `pip`. In a terminal, type:
+2. If *Python 3* is not installed, see [this link](https://www.python.org/downloads/macos/) and install *Python 3*.
+
+3. Download `pip`. In a terminal, type:
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ```
-3. Install `pip`. In a terminal, type:
+4. Install `pip`. In a terminal, type:
 ```bash
 python3 get-pip.py
 ```
-4. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
+5. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
 ```bash
 pip install networkx
 pip install matplotlib
 ```
-5. Get the files of the project. Two options:\
+6. Get the files of the project. Two options:\
 a) With `git clone`. In a terminal, type:
 `git clone https://github.com/d-m-3/pds.git`\
 b) Or click on *Code - Download ZIP*
