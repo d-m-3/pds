@@ -43,7 +43,7 @@ b) Or click on *Code - Download ZIP*
 on the [project's GitHub page](https://github.com/d-m-3/pds).
 
 ### On Windows
-1. To install *Python 3*, see [this link](https://www.python.org/downloads/windows/) and install *Python 3*.
+1. To install *Python 3*, see [this link](https://www.python.org/downloads/windows/).
 2. To install `pip`, follow the `pip` [documentation here](https://pip.pypa.io/en/stable/installation/).
 3. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
 ```bash
