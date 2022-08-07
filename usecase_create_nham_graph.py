@@ -7,7 +7,7 @@ def create_nham_cubic_graph(vertices_nb, filepath):
     Goal: Generate, display, and save random non-Hamiltonian cubic graphs on 
     a given number of vertices.
     Execution and details: It creates a random non-Hamiltonian cubic graph 
-    on a given number of vertices, saves it in the given folder, with the 
+    on a given number of vertices and saves it in the given folder with the 
     number of vertices at the end of the filename. It also saves the figure 
     in .png format in the same directory.
     """

@@ -3,20 +3,20 @@ import pds
     
 def create_graphs_and_check(vertices_nb, graphs_nb, filepath, only_nh):
     """
-    Goal: Search for cubic graphs on |V| vertices with |V| > 8,
-    that admit no PDS of maximum possible size.
+    Goal: Search for cubic graphs *G = (V, E)* with *|V| > 8* that admit 
+    no PDS of maximum possible size.
     Execution and details: It creates random cubic graphs and tests if they 
-    do not have a PDS of maximum possible size. If such a graph with no PDS of 
-    maximum possible size is found, it is drawn, saved as a .png figure and as 
+    admit a PDS of maximum possible size. If a graph with no PDS of maximum 
+    possible size is found, then it is drawn, saved as a .png figure and as 
     an edge list that can be imported later, and the program's execution is 
-    stopped. The number of vertices in a graph and the number of created and 
+    stopped. The number of vertices in graphs and the number of created and 
     tested graphs can be defined. If the boolean "only_nh" is set to "True", 
-    only cubic graphs that do not have a Hamiltonian cycle are considered 
+    then only cubic graphs that do not have a Hamiltonian cycle are considered 
     (please notice that it takes much longer).
     """
-    print(f"\nCreating {graphs_nb} graphs on {vertices_nb} vertices and"
-          " \nchecking for graphs that have not a PDS of maximum possible size."
-          " \nPlease wait...")
+    print(f"\nCreating {graphs_nb} graphs on {vertices_nb} vertices and "
+          "checking for graphs that do not admit a PDS of maximum possible "
+          "size. Please wait...")
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)
         # Try to find a PDS of maximum size.

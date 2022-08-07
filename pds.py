@@ -8,12 +8,12 @@ from itertools import combinations
 
 """
 Main library for computing and showing proportionally dense subgraphs (PDSs) 
-of maximum possible size in a given graph. Alternatively, the pds library also 
-allows generating and displaying random graphs of specific graph classes, such 
-as cubic graphs, k-regular bipartite graphs, caterpillars, and trees. Thus, 
-one or all PDSs of maximum possible size can be drawn on randomly generated 
-instances of the above-mentioned graph classes. This library can be imported as 
-a module into any Python project by using "import pds".
+of maximum possible size in any given graph. Alternatively, the pds library 
+also allows generating and displaying random graphs of specific graph classes, 
+such as cubic graphs, k-regular bipartite graphs, caterpillars, and trees. 
+Thus, one or all PDSs of maximum possible size can be drawn on randomly 
+generated instances of the above-mentioned graph classes. This library can be 
+imported as a module into any Python project by using "import pds".
 """
 
 
@@ -49,8 +49,8 @@ def max_degree(G):
 
 def get_combinations_of_subsets(G):
     """
-    Returns a list of all possible combinations of subsets S_i (as lists) 
-    of vertices of G for some integer i > 1, where the size of each S_i is the
+    Returns a list of all possible combinations of subsets S_i of vertices 
+    of G (as lists) for some integer i > 1, where the size of each S_i is the
     maximum possible size of a PDS.
     """
     return list(combinations(range(0, G.number_of_nodes()), 
@@ -74,9 +74,7 @@ def is_subgraph_a_pds(G, subgraph):
 
 def is_vertex_satisfied_in_subgraph(vertex, G, subgraph):
     """
-    Returns True if the given vertex is satisfied in the subgraph, i.e.
-    the vertex satisfies the conditions to be considered in the subgraph, 
-    such that the subgraph is a PDS.
+    Returns True if the given vertex is satisfied in the subgraph.
     """
     deg_s_frac = deg_subgraph(vertex, G, subgraph) / (len(subgraph) - 1)
     deg_frac = G.degree(vertex) / (G.number_of_nodes() - 1)
@@ -90,9 +88,9 @@ def deg_subgraph(vertex, G, subgraph):
 
 def is_pds_max(G, max_pds, vertices_nb):
     """
-    Returns True if the given PDS is of maximum possible size. Otherwise, 
-    returns False. For cubic graphs of eight vertices, three graph exceptions 
-    are not considered.
+    Returns True if the given PDS is of maximum possible size.
+    For cubic graphs of eight vertices, three graph exceptions are not 
+    considered.
     """
     if len(max_pds) == pds_size(vertices_nb, G.degree[0]):
         return True
@@ -123,9 +121,8 @@ def get_nodes_not_part_of_pds(G):
 
 def get_pds_every_v_ds2(G):
     """
-    Returns a list containing one PDS of maximum possible size, where for every
-    vertex v, d_S(v) = 2, in 3-regular (cubic) graphs. 
-    The PDS may not be connected.
+    Returns a list containing one PDS of maximum possible size such that 
+    d_S(v) = 2 for each v in S. The PDS may not be connected.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
@@ -140,9 +137,9 @@ def get_pds_every_v_ds2(G):
 
 def get_pds_every_v_ds2_and_ds3(G, ds3_nb):
     """
-    Returns a list containing one PDS of maximum possible size where d_S(v) = 2 
-    for every vertex v, except for at most "ds3_nb" where d_s(v) = 3,
-    in cubic graphs. The PDS may be disconnected.
+    Returns a list containing one PDS of maximum possible size such that 
+    d_S(v) = 3 for at most "ds3_nb" vertices v in S. The PDS may be 
+    disconnected.
     """
     all_max_pds = get_all_max_pds(G)
     for a_pds in all_max_pds:
@@ -273,9 +270,9 @@ def create_random_tree(nb_vertices, max_deg=10):
     
 def draw_graph(G, max_pds, layout="circular"):
     """
-    Draws the graph and highlights in red vertices that belong to
-    a PDS of maximum possible size and returns the drawn graph.
-    By default, ciruclar layout is used. 
+    Draws the given graph "G" and highlights in red vertices that belong to
+    a PDS of maximum possible size. The graph is then returned.
+    By default, a ciruclar layout is used.
     Bipartite and spring layouts can be used as an option.
     """
     if layout == "bipartite":
@@ -298,8 +295,8 @@ def draw_graph(G, max_pds, layout="circular"):
 
 def draw_all_max_pds(G, layout="circular"):
     """
-    Draws all the PDSs of maximum possible size for the given graph G.
-    By default, ciruclar layout is used. 
+    Draws all the PDSs of maximum possible size for the given graph "G".
+    By default, a ciruclar layout is used. 
     Bipartite and spring layouts can be used as an option.
     """
     all_max_pds = get_all_max_pds(G)
@@ -308,24 +305,25 @@ def draw_all_max_pds(G, layout="circular"):
         
 def save_graph(G, filepath):
     """
-    Saves the graph as an edge list that can be imported later, to the 
+    Saves the graph as an edge list (that can be imported later) to the 
     given filepath (path/to/file). The file extension is added automatically.
     """
     nx.write_edgelist(G, f"{filepath}.gz", data=False)
 
 def save_graph_and_figure(G, figure, filepath):
     """
-    Saves the graph as an edge list that can be imported and saves the
+    Saves the graph as an edge list (that can be imported later) and saves the
     figure of the graph to the given filepath (path/to/file).
-    The file extensions are added automatically.
+    File extensions are added automatically.
     """
     figure.savefig(f"{filepath}.png")
     nx.write_edgelist(G, f"{filepath}.gz", data=False)
     
 def next_valid_filepath(pattern):
     """
-    Gives the next valid filename according to the pattern, e.g. returns
-    "sample-2" if the pattern is "sample-" and the file "sample-1.png" exists.
+    Gives the next valid filename according to the given pattern. 
+    E.g. "sample-2" is returned if the pattern is "sample-" and the file 
+    "sample-1.png" already exists.
     """
     i = 1
     while os.path.exists((pattern % i) + ".png"):

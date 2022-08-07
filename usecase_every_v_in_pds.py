@@ -3,21 +3,21 @@ import pds
 
 def check_every_v_in_pds(vertices_nb, graphs_nb, only_nh):
     """
-    Goal: Test the following conjecture computationally: 
-    "For any cubic graph G = (V, E) with |V| > 8, every vertex is part of 
-    at least one PDS of maximum possible size".\
+    Goal: Test the following conjecture computationally "Let *G = (V, E)* 
+    be a cubic graph with *|V| > 8*. Then, every vertex in *V* is part of at 
+    least one PDS of maximum possible size".
     Execution and details: It creates random cubic graphs and tests if, 
     for every graph, every vertex is part of at least one PDS of maximum 
     possible size. If the program finds a graph in which some vertices are not 
-    part of any PDS, the graph is drawn, the vertices not belonging to any PDS 
-    are displayed, and the program's execution is stopped. The number of 
-    vertices in a graph and the number of created and tested graphs can 
-    be defined. If the boolean "only_nh" is set to "True", only cubic graphs 
-    that do not have a Hamiltonian cycle are considered (please notice that 
-    it takes much longer).
+    part of any PDS, then the graph is drawn, the vertices not belonging to 
+    any PDS are displayed, and the program's execution is stopped. The number 
+    of vertices in graphs and the number of created and tested graphs can be 
+    defined. If the boolean "only_nh" is set to "True", then only cubic graphs 
+    that do not have a Hamiltonian cycle are considered 
+    (please notice that it takes much longer).
     """
     print(f"\nCreating {graphs_nb} graphs of {vertices_nb} vertices and"
-          " checking if \nevery vertex of the graph is part of at least one"
+          " checking if every vertex of the graph is part of at least one"
           " PDS of maximum possible size. \nPlease wait...")
     for i in range(1, graphs_nb + 1):
         G = pds.get_connected_cubic_graph(vertices_nb, only_nh)

@@ -1,8 +1,7 @@
 import networkx as nx
 
 """
-This file contains exception graphs, specific graphs used for unit tests,
-and graphs that have a particularity.
+This file contains specific graphs and graphs used for unit tests.
 """
 
 
@@ -48,8 +47,8 @@ def Gex2():
 
 def G_two_K4():
     """
-    Returns a graph on 8 vertices, composed of two unconnected K_4, i.e.,
-    complete graphs on 4 vertices.
+    Returns a graph on 8 vertices, consisting of two unconnected complete 
+    graphs on 4 vertices each.
     """
     G_two_K4 = nx.Graph()
     G_two_K4.add_edge(1,2)
@@ -205,7 +204,7 @@ def G_algorithm1_failure_14():
 def G_cubic_bipartite_unbalanced_pds():
     """
     Specific cubic graph on 18 vertices with
-    a PDS [0, 1, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17] that has not the 
+    PDS [0, 1, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17] that has not the 
     same number of vertices in independent sets X and Y, expressed here as 
     an "unbalanced PDS", which is unusual.
     """
