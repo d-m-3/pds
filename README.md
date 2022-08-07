@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```bash
 python3 --version
 ```
-2. If *Python 3* is not installed, see [this link](https://www.python.org/downloads/macos/) and install *Python 3*.
+2. If *Python 3* is not installed, see [https://www.python.org/downloads/macos/](https://www.python.org/downloads/macos/) and install *Python 3*.
 
 3. Download `pip`. In a terminal, type:
 ```bash
@@ -40,11 +40,11 @@ pip install matplotlib
 a) With `git clone`. In a terminal, type:
 `git clone https://github.com/d-m-3/pds.git`\
 b) Or click on *Code - Download ZIP*
-on the [project's GitHub page](https://github.com/d-m-3/pds).
+on [https://github.com/d-m-3/pds](https://github.com/d-m-3/pds).
 
 ### On Windows
-1. To install *Python 3*, see [this link](https://www.python.org/downloads/windows/).
-2. To install `pip`, follow the `pip` [documentation here](https://pip.pypa.io/en/stable/installation/).
+1. To install *Python 3*, see [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).
+2. To install `pip`, follow the `pip` documentation on [https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/).
 3. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
 ```bash
 pip install networkx
@@ -54,7 +54,7 @@ pip install matplotlib
 a) With `git clone`. In a terminal, type:
 `git clone https://github.com/d-m-3/pds.git`\
 b) Or click on *Code - Download ZIP*
-on the [project's GitHub page](https://github.com/d-m-3/pds).
+on [https://github.com/d-m-3/pds](https://github.com/d-m-3/pds).
 
 
 ## Usage and Details
