@@ -1,2 +1,6 @@
 __pycache__/
 special_graphs/
+all_pds_of_a_graph/
+usecase_import_graph_check_if_pds.py
+test_algorithm.py
+pds_cubic_algorithm.py
