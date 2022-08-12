@@ -1,6 +1,6 @@
 # pds
 ## Overview
-`pds` is a library written in *Python* for computing and showing *proportionally dense subgraphs (PDSs)* of maximum possible size in any given graph. Alternatively, the *pds* library also allows generating and displaying random graphs of specific graph classes, such as cubic graphs, *k*-regular bipartite graphs, caterpillars, and trees. Thus, one or all PDSs of maximum possible size can be drawn on randomly generated instances of the above-mentioned graph classes. This library can be imported as a module into any *Python* project by using `import pds`.
+`pds` is a library written in Python for computing and showing *proportionally dense subgraphs (PDSs)* of maximum possible size in any given graph. Alternatively, the *pds* library also allows generating and displaying random graphs of specific graph classes, such as cubic graphs, *k*-regular bipartite graphs, caterpillars, and trees. Thus, one or all PDSs of maximum possible size can be drawn on randomly generated instances of the above-mentioned graph classes. This library can be imported as a module into any Python project by using `import pds`.
 
 Bazgan et al. defined *"a proportionally dense subgraph (PDS) as an induced subgraph of a graph with the property that each vertex in the PDS is adjacent to proportionally as many vertices in the subgraph as in the graph"* (source: [https://arxiv.org/abs/1903.06579](https://arxiv.org/abs/1903.06579)).
 
@@ -58,7 +58,7 @@ on [https://github.com/d-m-3/pds](https://github.com/d-m-3/pds).
 
 
 ## Usage and Details
-- `pds.py` is the main library for computing and showing PDSs of maximum possible size in any given graph. Alternatively, the *pds* library also allows generating and displaying random graphs of specific graph classes, such as cubic graphs, *k*-regular bipartite graphs, caterpillars, and trees. Thus, one or all PDSs of maximum possible size can be drawn on randomly generated instances of the above-mentioned graph classes. This library can be imported as a module into any *Python* project by using `import pds` (see *External Usage* below).
+- `pds.py` is the main library for computing and showing PDSs of maximum possible size in any given graph. Alternatively, the *pds* library also allows generating and displaying random graphs of specific graph classes, such as cubic graphs, *k*-regular bipartite graphs, caterpillars, and trees. Thus, one or all PDSs of maximum possible size can be drawn on randomly generated instances of the above-mentioned graph classes. This library can be imported as a module into any Python project by using `import pds` (see *External Usage* below).
 - `pds_tests.py` contains the unit tests for all the functions in `pds.py`, except for the functions that draw and/or save graphs.
 - `usecase_draw_1_pds.py`\
 **Goal:** Draw a cubic graph or a *k*-regular bipartite graph and show one PDS of maximum possible size.\
@@ -97,7 +97,7 @@ Contains specific graphs used for unit tests and specific cubic graphs on eight 
 
 
 ## External Usage
-You can import the `pds` library into any *Python* project:
+You can import the `pds` library into any Python project:
 
 ```python
 import pds
