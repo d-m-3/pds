@@ -17,11 +17,11 @@ git clone https://github.com/d-m-3/pds.git
 pip install -r requirements.txt
 ```
 ### On MacOS
-1. Check that *Python 3* is installed. In a terminal, type:
+1. Check that Python 3 is installed. In a terminal, type:
 ```bash
 python3 --version
 ```
-2. If *Python 3* is not installed, see [https://www.python.org/downloads/macos/](https://www.python.org/downloads/macos/) and install *Python 3*.
+2. If Python 3 is not installed, see [https://www.python.org/downloads/macos/](https://www.python.org/downloads/macos/) and install Python 3.
 
 3. Download `pip`. In a terminal, type:
 ```bash
@@ -43,7 +43,7 @@ b) Or click on *Code - Download ZIP*
 on [https://github.com/d-m-3/pds](https://github.com/d-m-3/pds).
 
 ### On Windows
-1. To install *Python 3*, see [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).
+1. To install Python 3, see [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).
 2. To install `pip`, follow the `pip` documentation on [https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/).
 3. Install the modules `networkx` and `matplotlib` with `pip`. In a terminal, type:
 ```bash
