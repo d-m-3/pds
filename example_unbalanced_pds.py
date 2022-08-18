@@ -14,7 +14,7 @@ def main():
     print("Is subgraph", subgraph, "a PDS?", is_sub_a_pds)
     if is_sub_a_pds:
         pds.draw_graph(G, subgraph, layout="bipartite")    
-    # pds.draw_all_max_pds(G, layout="bipartite")
+    #pds.draw_all_max_pds(G, layout="bipartite")
     
 if __name__ == '__main__':
     main()
