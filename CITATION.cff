@@ -11,7 +11,7 @@ authors:
   - given-names: Dimitri
     family-names: Gurtner
     email: dimitri.gurtner@gmail.com
-identifiers:
+identifiers: 
   - type: url
     value: 'https://github.com/d-m-3/pds'
     description: GitHub repository
